@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MaxWell.Models"
+             xmlns:viewModels="clr-namespace:MaxWell.ViewModels"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             xmlns:controls="clr-namespace:MaxWell.Controls"
+             xmlns:Persons="clr-namespace:MaxWell.ViewModels.Persons"
+             xmlns:persons="clr-namespace:MaxWell.Controls.Persons"
+             x:Class="MaxWell.Views.Persons.LayoutPersonListViewPage"
+            
+              Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary" Icon="ic_add" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.BindingContext>
+        <Persons:PersonListViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="ColoredBackground" VerticalOptions="Fill" HorizontalOptions="Fill" Aspect="Fill"/>
+            <ListView x:Name="PersonListView" 
+                      BackgroundColor="Transparent"
+                      RowHeight="200" ItemsSource="{Binding PersonModelList}" SeparatorVisibility="None"
+                      RefreshCommand="{Binding RefreshCommand}"
+                      IsPullToRefreshEnabled="true"
+                      IsRefreshing="{Binding IsRefreshing}"
+                      CachingStrategy="RecycleElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <persons:LayoutPersonView BindingContext="{Binding}" />
+
+
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            </ListView>
+        </Grid>     <!--   <Grid Padding="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        <StackLayout BackgroundColor="White">
+            <ListView x:Name="PersonListView" 
+                      ItemsSource="{Binding PersonModelList}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="true"
+                      RefreshCommand="{Binding LoadItemsCommand}"
+                      IsPullToRefreshEnabled="true"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      CachingStrategy="RecycleElement"
+                      ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <persons:PersonView BindingContext="{Binding}" />
+
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+            </Grid>-->
+    </ContentPage.Content>
+</ContentPage>

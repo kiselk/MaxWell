@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             x:Class="MaxWell.Controls.Foods.FoodSmallView"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:common="clr-namespace:MaxWell.Controls.Common;assembly=MaxWell">
+     <ContentView.Resources>
+          <ResourceDictionary>
+              <converters:DateTimeToLocalDateConverter x:Key="dateConverter" />
+              <converters:AgeConverter x:Key="ageConverter" />
+          </ResourceDictionary>
+        </ContentView.Resources>
+    <ContentView.Content>
+<!--
+        <StackLayout>
+            
+            <controls:CircleImage HeightRequest="64" Source="{Binding ImageAsImageStream, Mode=OneWay}" Aspect="AspectFill"/>
+            <Label  LineBreakMode="NoWrap"  Text="{Binding Name, Mode=OneWay}" StyleClass="main" FontSize="16" Style="{DynamicResource ListItemTextStyle}"/>
+            </StackLayout>
+    <Image HorizontalOptions="Start" Source="{Binding ImageAsImageStream, Mode=OneWay}"
+                   WidthRequest="64" HeightRequest="64" />
+            -->
+        <StackLayout Margin="10,0,5,0" WidthRequest="64" HeightRequest="64">
+            <forms:CachedImage HorizontalOptions="Start" Source="{Binding Description, Mode=OneWay}"
+                   WidthRequest="64" HeightRequest="64" />
+            <common:TransparentLabel HorizontalTextAlignment="Center" Margin="0,-5,0,0"
+                   LineBreakMode="TailTruncation" FontSize="12" Text="{Binding Name}"
+                  />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>关于金龙</value>
+  </data>
+  <data name="AddPhoto" xml:space="preserve">
+    <value>添加照片</value>
+  </data>
+  <data name="Allergens" xml:space="preserve">
+    <value>过敏 原</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Cookoo" xml:space="preserve">
+    <value>库库</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>创建</value>
+  </data>
+  <data name="Dishes" xml:space="preserve">
+    <value>菜</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="Food" xml:space="preserve">
+    <value>食物</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>库</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="Ingredients" xml:space="preserve">
+    <value>成分</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>加载</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>登录</value>
+    <comment>Comment</comment>
+  </data>
+  <data name="Meals" xml:space="preserve">
+    <value>餐费</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>菜单</value>
+  </data>
+  <data name="NotLoggedIn" xml:space="preserve">
+    <value>用户未登录</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>人脉</value>
+  </data>
+  <data name="Phenyl" xml:space="preserve">
+    <value>苯基丙氨酸顶部</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>照片</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>个人资料</value>
+  </data>
+  <data name="Rations" xml:space="preserve">
+    <value>口粮</value>
+  </data>
+  <data name="Recipes" xml:space="preserve">
+    <value>食谱</value>
+  </data>
+  <data name="Todo" xml:space="preserve">
+    <value>Todo</value>
+  </data>
+  <data name="Top" xml:space="preserve">
+    <value>返回页首</value>
+  </data>
+</root>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             x:Class="MaxWell.Controls.Pages.PageView"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+     <ContentView.Resources>
+          <ResourceDictionary>
+              <converters:DateTimeToLocalDateConverter x:Key="dateConverter" />
+              <converters:AgeConverter x:Key="ageConverter" />
+          </ResourceDictionary>
+        </ContentView.Resources>
+    <ContentView.Content>
+
+     
+
+
+       
+            
+            <Label LineBreakMode="NoWrap" Text="{Binding Title}" TextColor="White" StyleClass="main" FontSize="23" Style="{DynamicResource ListItemDetailTextStyle}"/>
+      
+    </ContentView.Content>
+</ContentView>

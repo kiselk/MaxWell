@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.1.0</Version>
+    <Configurations>Debug;Release;Android release</Configurations>
+    <NeutralLanguage>en-US</NeutralLanguage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <WarningLevel>0</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android release|AnyCPU'">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Main\Primary\**" />
+    <Compile Remove="Views\Main\Secondary\**" />
+    <EmbeddedResource Remove="Views\Main\Primary\**" />
+    <EmbeddedResource Remove="Views\Main\Secondary\**" />
+    <None Remove="Views\Main\Primary\**" />
+    <None Remove="Views\Main\Secondary\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="MultilingualResources\MaxWell.en.xlf" />
+    <None Remove="MultilingualResources\MaxWell.fr.xlf" />
+    <None Remove="MultilingualResources\MaxWell.ja.xlf" />
+    <None Remove="MultilingualResources\MaxWell.ko.xlf" />
+    <None Remove="MultilingualResources\MaxWell.zh-Hans.xlf" />
+    <None Remove="MultilingualResources\MaxWell.zh-Hant.xlf" />
+    <None Remove="NewFolder\MaxWell.ru.xlf" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.6.0" />
+    <PackageReference Include="Forms.Controls.FlexButton" Version="0.9.0" />
+    <PackageReference Include="Google.Apis.Customsearch.v1" Version="1.36.1.1369" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.12.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
+    <PackageReference Include="sqlite-net-base" Version="1.5.231" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="16.3.0.36" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="16.3.0.36" />
+    <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
+    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+    <PackageReference Include="ThriveGmbH.BottomNavigationBar.XF" Version="1.0.2" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Xam.Plugins.TextToSpeech" Version="4.0.0.7" />
+    <PackageReference Include="Xamarin.Auth" Version="1.6.0.4" />
+    <PackageReference Include="Xamarin.Auth.Extensions" Version="1.6.0.4" />
+    <PackageReference Include="Xamarin.Auth.XamarinForms" Version="1.6.0.4" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
+    <PackageReference Include="Xamarin.VKontakte" Version="1.0.1" />
+    <PackageReference Include="Xamvvm.Forms" Version="1.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Lottie.Forms">
+      <HintPath>..\..\..\Users\user\.nuget\packages\com.airbnb.xamarin.forms.lottie\2.7.0\lib\xamarinios10\Lottie.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.TextToSpeech">
+      <HintPath>..\..\..\Users\user\.nuget\packages\xam.plugins.texttospeech\4.0.0.7\lib\xamarinios10\Plugin.TextToSpeech.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Controls\Cats\CatIconView.xaml.cs">
+      <DependentUpon>CatIconView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Cats\CatSmallView.xaml.cs">
+      <DependentUpon>CatSmallView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\CatView.xaml.cs">
+      <DependentUpon>CatViewxaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Comments\CommentEditView.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Comments\CommentView.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Foods\PhenylDetailView.xaml.cs">
+      <DependentUpon>PhenylDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Foods\FoodSmallView.xaml.cs">
+      <DependentUpon>FoodSmallView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Foods\FoodLayoutView.xaml.cs">
+      <DependentUpon>FoodLayoutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Foods\FoodDetailView.xaml.cs">
+      <DependentUpon>FoodDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Foods\FoodView.xaml.cs">
+      <DependentUpon>FoodView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Images\ImageLayoutView.xaml.cs">
+      <DependentUpon>ImageLayoutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Pages\PageView.xaml.cs">
+      <DependentUpon>PageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Persons\PersonCommentsByListView.xaml.cs">
+      <DependentUpon>PersonCommentsByListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Persons\PersonCommentsForListView.xaml.cs">
+      <DependentUpon>PersonCommentsForListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Persons\PersonDetailEditView.xaml.cs">
+      <DependentUpon>PersonDetailEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Persons\PersonKittensListView.xaml.cs">
+      <DependentUpon>PersonKittensListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Persons\PersonDetailView.xaml.cs">
+      <DependentUpon>PersonDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Persons\PersonPridesListView.xaml.cs">
+      <DependentUpon>PersonPridesListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Persons\LayoutPersonView.xaml.cs">
+      <DependentUpon>LayoutPersonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Persons\PersonView.xaml.cs">
+      <DependentUpon>PersonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Prides\PrideDetailView.xaml.cs">
+      <DependentUpon>PrideDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Prides\PrideView.xaml.cs">
+      <DependentUpon>PrideView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\VyazkaDetailView.xaml.cs">
+      <DependentUpon>VyazkaDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\AppResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Cats\CatListViewPage.xaml.cs">
+      <DependentUpon>CatListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Cats\CatDetailViewPage.xaml.cs">
+      <DependentUpon>CatDetailViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Cats\NewCatPage.xaml.cs">
+      <DependentUpon>NewCatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Comments\CommentDetailViewPage.xaml.cs">
+      <DependentUpon>CommentDetailViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Comments\CommentListViewPage.xaml.cs">
+      <DependentUpon>CommentListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Foods\FoodDetailViewPage.xaml.cs">
+      <DependentUpon>FoodDetailViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Foods\FoodsListViewPage.xaml.cs">
+      <DependentUpon>FoodsListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Foods\PhenylListViewPage.xaml.cs">
+      <DependentUpon>PhenylListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Images\ImagesListViewPage.xaml.cs">
+      <DependentUpon>ImagesListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Main\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Persons\LayoutPersonListViewPage.xaml.cs">
+      <DependentUpon>LayoutPersonListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Main\ProfileViewPage.xaml.cs">
+      <DependentUpon>ProfileViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Persons\RestPersonDetailViewPage.xaml.cs">
+      <DependentUpon>RestPersonDetailViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Persons\PersonDetailViewPage.xaml.cs">
+      <DependentUpon>PersonDetailViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Persons\RestPersonListViewPage.xaml.cs">
+      <DependentUpon>RestPersonListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Persons\PersonListViewPage.xaml.cs">
+      <DependentUpon>PersonListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pomets\PometDetailViewPage.xaml.cs">
+      <DependentUpon>PometDetailViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pomets\PometListViewPage.xaml.cs">
+      <DependentUpon>PometListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pregnancies\PregnancyListViewPage.xaml.cs">
+      <DependentUpon>PregnancyListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Prides\PrideDetailViewPage.xaml.cs">
+      <DependentUpon>PrideDetailViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Prides\PrideListViewPage.xaml.cs">
+      <DependentUpon>PrideListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Vyazki\VyazkaDetailViewPage.xaml.cs">
+      <DependentUpon>VyazkaDetailViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Vyazki\VyazkaListViewPage.xaml.cs">
+      <DependentUpon>VyazkaListViewPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\CatDetailView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\ParentsDetailView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\Persons\PersonCatsListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\Persons\PersonPridesListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\PometDetailView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\PometView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\PregnancyView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\VyazkaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\VyazkaDetailView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Calculator\CalculatorViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Calendar\SFCalendarViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Foods\PhenylListViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Main\Eula.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Main\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Main\CustomNavigationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Main\MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Main\OAuthPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pomets\PometListViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pregnancies\PregnancyListViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Todo\TodoItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Todo\TodoListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Vyazki\VyazkaListViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pomets\PometDetailViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pregnancies\PregnancyDetailViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Vyazki\VyazkaDetailViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Views\TodoItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\TodoListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+    <Folder Include="Services\Vkontakte\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\MaxWell.en.xlf" />
+    <XliffResource Include="MultilingualResources\MaxWell.fr.xlf" />
+    <XliffResource Include="MultilingualResources\MaxWell.ja.xlf" />
+    <XliffResource Include="MultilingualResources\MaxWell.ko.xlf" />
+    <XliffResource Include="MultilingualResources\MaxWell.ru.xlf" />
+    <XliffResource Include="MultilingualResources\MaxWell.zh-Hans.xlf" />
+    <XliffResource Include="MultilingualResources\MaxWell.zh-Hant.xlf" />
+  </ItemGroup>
+  <Import Project="..\MaxWell.Shared\MaxWell.Shared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
+</Project>

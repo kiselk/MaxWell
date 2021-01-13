@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             x:Class="MaxWell.Controls.Foods.FoodView"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:controls1="clr-namespace:MaxWell.Controls"
+             xmlns:cats="clr-namespace:MaxWell.Controls.Cats"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+     <ContentView.Resources>
+          <ResourceDictionary>
+              <converters:DateTimeToLocalDateConverter x:Key="dateConverter" />
+              <converters:AgeConverter x:Key="ageConverter" />
+          </ResourceDictionary>
+        </ContentView.Resources>
+    <ContentView.Content>
+    
+        <Grid Padding="10">
+          <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+
+            <forms:CachedImage Grid.RowSpan="3" WidthRequest="64" HeightRequest="64" Source="{Binding Description, Mode=OneWay}" Aspect="AspectFill"/>
+                
+            <!--
+            <Image Grid.RowSpan="3" WidthRequest="128" HeightRequest="128" Source="{Binding ImageAsImageStream, Mode=OneWay}" /> -->
+          <Label  LineBreakMode="NoWrap"  Grid.Column="1" Text="{Binding Name}" StyleClass="main" FontSize="16" Style="{DynamicResource ListItemTextStyle}"/>
+          <Label  LineBreakMode="NoWrap"  Grid.Row="1" Grid.Column="1" Text="{Binding Description}" StyleClass="mainPageSubtitle" FontSize="13" Style="{DynamicResource ListItemDetailTextStyle}"/>
+            <Label LineBreakMode="NoWrap"  Grid.Row="2" Grid.Column="1" Text="{Binding Birthday,Mode=OneWay}" StyleClass="mainPageSubtitle" FontSize="13" Style="{DynamicResource ListItemDetailTextStyle}"/>
+            <controls1:HorizontalScrollView   Grid.Row="3" Grid.Column="1" HeightRequest="32" Orientation="Horizontal"  ItemsSource="{Binding CatModelList}">
+                <controls1:HorizontalScrollView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <cats:CatIconView BindingContext="{Binding}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </controls1:HorizontalScrollView.ItemTemplate>
+            </controls1:HorizontalScrollView>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

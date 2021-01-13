@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             xmlns:controls="clr-namespace:MaxWell.Controls"
+         
+             xmlns:cats="clr-namespace:MaxWell.Controls.Cats"
+             xmlns:controls1="clr-namespace:MaxWell.Controls"
+             x:Class="MaxWell.Views.Pomets.PometDetailViewPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary" Text="Сохранить" Clicked="ButtonClicked" />
+        <ToolbarItem  Order="Primary" Text="Удалить" Clicked="DeleteClicked" />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateTimeToLocalDateConverter x:Key="DateConverter" />
+            <converters:AgeConverter x:Key="AgeConverter" />
+            <converters:CatIdToNameConverter x:Key="CatIdToNameConverter" />
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ScrollView>
+
+        <StackLayout Orientation="Vertical" Spacing="20" Padding="15" BackgroundColor="White">
+            <controls:ParentsDetailView BindingContext="{Binding}" />
+
+
+            <Label Text="Дата родов" FontSize="Medium"/>
+            <DatePicker MinimumDate="01/01/2018"
+                        MaximumDate="12/31/2018"
+                        Date="{Binding Pomet.PometDate}"
+            />
+            <Label x:Name="age" Text="Давность" FontSize="Medium"/>
+            <Label  Text="{Binding  Pomet.PometDate, Converter={StaticResource AgeConverter},Mode=OneWay}"  />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Начало" Grid.Row="0" Grid.Column="0"/>
+                <TimePicker x:Name="StartTime" Grid.Row="1" Grid.Column="0" Time="{Binding Pomet.StartTime}" />
+
+                <Label Text="Конец" Grid.Row="0" Grid.Column="1"/>
+                <TimePicker x:Name="EndTime" Grid.Row="1" Grid.Column="1" Time="{Binding Pomet.EndTime}" />
+
+            </Grid>
+
+
+
+            <Label Text="Котята" FontSize="Small" />
+            <Button x:Name="AddCatButton" Image="ic_add" Clicked="AddKittenClicked" />
+            <!--  <controls:PersonKittensListView  BindingContext="{Binding}"/>    -->
+            <RelativeLayout HeightRequest="160">
+                <ListView  x:Name="KittensList"
+                           ItemsSource="{Binding KittenModelList}"
+                           HasUnevenRows="true"
+                           CachingStrategy="RecycleElement"
+                           ItemSelected="OnCatItemSelected"      >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <controls:CatView BindingContext="{Binding}" />
+
+
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RelativeLayout>
+
+
+
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
+    

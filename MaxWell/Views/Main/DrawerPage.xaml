@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<forms:MasterDetailPage xmlns:forms="http://xamarin.com/schemas/2014/forms"
+                                xmlns:main="clr-namespace:MaxWell.Views.Main">
+            <forms:MasterDetailPage.Master>
+        <main:MenuPage></main:MenuPage>
+            </forms:MasterDetailPage.Master>
+            <forms:MasterDetailPage.Detail>
+                <main:MainPage> </main:MainPage>
+            </forms:MasterDetailPage.Detail>
+        </forms:MasterDetailPage>

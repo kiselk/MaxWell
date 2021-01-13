@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>に関しては</value>
+  </data>
+  <data name="AddPhoto" xml:space="preserve">
+    <value>写真を追加します。</value>
+  </data>
+  <data name="Allergens" xml:space="preserve">
+    <value>アレルゲン</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="Cookoo" xml:space="preserve">
+    <value>より</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>作成</value>
+  </data>
+  <data name="Dishes" xml:space="preserve">
+    <value>料理</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="Food" xml:space="preserve">
+    <value>食品</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>ギャラリー</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>こんにちは</value>
+  </data>
+  <data name="Ingredients" xml:space="preserve">
+    <value>食材</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>読み込み</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>ログイン</value>
+    <comment>Comment</comment>
+  </data>
+  <data name="Meals" xml:space="preserve">
+    <value>食費</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>メニュー</value>
+  </data>
+  <data name="NotLoggedIn" xml:space="preserve">
+    <value>ユーザーは記録にありません。</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>ユーザー</value>
+  </data>
+  <data name="Phenyl" xml:space="preserve">
+    <value>フェニルアラニン トップ</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>写真</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>プロフィール</value>
+  </data>
+  <data name="Rations" xml:space="preserve">
+    <value>配給</value>
+  </data>
+  <data name="Recipes" xml:space="preserve">
+    <value>レシピ</value>
+  </data>
+  <data name="Todo" xml:space="preserve">
+    <value>ToDo</value>
+  </data>
+  <data name="Top" xml:space="preserve">
+    <value>上</value>
+  </data>
+</root>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MaxWell.Models"
+             xmlns:viewModels="clr-namespace:MaxWell.ViewModels"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             xmlns:controls="clr-namespace:MaxWell.Controls"
+             xmlns:Foods="clr-namespace:MaxWell.ViewModels.Foods"
+             xmlns:images="clr-namespace:MaxWell.Controls.Images"
+             xmlns:images1="clr-namespace:MaxWell.ViewModels.Images;assembly=MaxWell"
+             x:Class="MaxWell.Views.Foods.ImagesListViewPage"
+           Title="{Binding Title}"
+             Padding="0"
+      
+             x:Name="RestBrowseItemsPage">
+ <!--      <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_add" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>
+ 
+ BackgroundImage="splash_logo"
+ -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Icon="ic_add" Clicked="RestAddItem_Clicked" x:Name="RestSyncItem" ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <images1:ImageListViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+
+
+
+     
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <!--   <StackLayout BackgroundColor="Black" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">  </StackLayout>
+       <Image Source="MainCat"  VerticalOptions="End" Aspect="AspectFit"/> -->
+                <Image Source="bg_29"  HorizontalOptions="Fill" Aspect="AspectFill"/>
+
+                <ListView x:Name="FoodListView"  VerticalOptions="FillAndExpand"
+                              BackgroundColor="Transparent"  ItemSelected="OnItemSelected"
+                              RowHeight="200" ItemsSource="{Binding ImageModelList}" SeparatorVisibility="None"
+                              RefreshCommand="{Binding RefreshCommand}"
+                              IsPullToRefreshEnabled="true"
+                          Margin="10" 
+                          IsRefreshing="{Binding IsRefreshing}"
+                              CachingStrategy="RecycleElement">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <images:ImageLayoutView BindingContext="{Binding}" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+       
+        
+        <!--
+<ListView x:Name="RestFoodListView" 
+                      ItemsSource="{Binding FoodModelList}"
+                      VerticalOptions="FillAndExpand"
+                     RowHeight = "200"
+                      RefreshCommand="{Binding LoadItemsCommand}"
+                      IsPullToRefreshEnabled="true"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      CachingStrategy="RecycleElement"
+                      ItemSelected="OnItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <foods:FoodView BindingContext="{Binding}" />
+
+
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+                <!-- -->
+         
+    </ContentPage.Content>
+</ContentPage>

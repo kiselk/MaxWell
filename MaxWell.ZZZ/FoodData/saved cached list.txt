@@ -1,0 +1,202 @@
+    [HttpGet]
+        public IActionResult List()
+        {
+            _context.Set<NutritionData>().AsNoTracking();
+            _context.Set<FoodDescription>().AsNoTracking();
+            _context.Set<FoodInfo>().AsNoTracking();
+
+//            _context.= MergeOption.OverwriteChanges;
+            List < Food> list = _context.Food.ToList();
+                List<NutritionData> phenylData1 = new List<NutritionData>();
+            List<NutritionData> phenylData2 = new List<NutritionData>();
+       /*         try
+            {
+                      phenylData1 = _context.NutritionData.ToList();
+                if (phenylData1 != null)
+                {
+                    log("Got PhenylData1 ");
+                    if (phenylData1.Count > 0)
+                    {
+                        log("Got PhenylData1 Count " + phenylData1.Count);
+                        log("Got PhenylData1 0 id [" + phenylData1[0].FoodId + "][" + phenylData1[0].Id + "][" + phenylData1[0].Amount1 + "]");
+                        log("Got PhenylData1 1 id [" + phenylData1[1].FoodId + "][" + phenylData1[1].Id + "][" + phenylData1[1].Amount1 + "]");
+                        log("Got PhenylData1 2 id [" + phenylData1[2].FoodId + "][" + phenylData1[2].Id + "][" + phenylData1[2].Amount1 + "]");
+                        log("Got PhenylData1 3 id [" + phenylData1[3].FoodId + "][" + phenylData1[3].Id + "][" + phenylData1[3].Amount1 + "]");
+                        log("Got PhenylData1 100 id [" + phenylData1[100].FoodId + "][" + phenylData1[100].Id + "][" + phenylData1[100].Amount1 + "]");
+                    }
+                }
+         
+                phenylData2 = phenylData1.Where(g=>g.Id.Equals(508)).ToList();
+                if (phenylData2 != null)
+                {
+                    log("Got PhenylData2 ");
+                    if (phenylData2.Count > 0)
+                    {
+                        log("Got PhenylData2 Count " + phenylData2.Count);
+                        log("Got PhenylData2 0 id [" + phenylData2[0].FoodId + "][" + phenylData2[0].Id + "][" + phenylData2[0].Amount1 + "]");
+                        log("Got PhenylData2 1 id [" + phenylData2[1].FoodId + "][" + phenylData2[1].Id + "][" + phenylData2[1].Amount1 + "]");
+                        log("Got PhenylData2 2 id [" + phenylData2[2].FoodId + "][" + phenylData2[2].Id + "][" + phenylData2[2].Amount1 + "]");
+                        log("Got PhenylData2 3 id [" + phenylData2[3].FoodId + "][" + phenylData2[3].Id + "][" + phenylData2[3].Amount1 + "]");
+                        log("Got PhenylData2 100 id [" + phenylData2[100].FoodId + "][" + phenylData2[100].Id + "][" + phenylData2[100].Amount1 + "]");
+                    }
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                log(e.Message);
+                if (e.InnerException != null)
+                    log(e.InnerException.InnerException.Message);
+            }
+            */
+            foreach (Food food in list)
+            {
+                try
+                {
+                    FoodDescription foodDesc = null;
+                    NutritionData phenyl = null;
+
+                    log(""+food.Protein_g);
+                    log("" + food.Protein_g);
+                    log("" + food.Protein_g);
+                    if (food.Protein_g.Equals(0.0) && food.Fats_g.Equals(0.0) && food.Carbs_g.Equals(0.0))
+                    {
+
+                        log("Doing food " + food.Name);
+                        var foodInfo = (_context.FoodInfo.Where(info => info.Shrt_Desc_Ru.StartsWith(food.Name)).OrderBy(info => info.Shrt_Desc_Ru.Length).FirstOrDefault());
+                   
+
+                        //    var foodDesc = (_context.FoodDescription.Where(info => info.Name.Contains(food.Name)).OrderBy(info => info.Name.Length).FirstOrDefault());
+                        //   NutritionData phenyl = (_context.NutritionData.Select(m => m.FoodId == foodDesc.Id).FirstOrDefault(m => m.Id.ToString() == "508");
+
+
+                        if (foodInfo != null)
+                        {
+                            log("Got FoodInfo " + foodInfo.Id + " "+foodInfo.Shrt_Desc_Ru);
+
+                            food.Protein_g = Convert.ToDouble(foodInfo.Protein_g); //203
+                            food.Fats_g = Convert.ToDouble(foodInfo.FA_Sat_g); //204
+                            food.Carbs_g = Convert.ToDouble(foodInfo.Carbohydrt_g); //205
+                            food.Calcium_mg = Convert.ToDouble(foodInfo.Calcium_mg); //301
+
+                            //        _context.Add(food);
+                            //        _context.SaveChanges(); 
+                            try
+                            {
+                             
+                                try
+                                {
+                                    foodDesc = (_context.FoodDescription.Where(info => info.Name.StartsWith(foodInfo.Shrt_Desc_Ru)).OrderBy(info => info.Name.Length).FirstOrDefault());
+                                    if (foodDesc != null)
+                                    {
+                                        log("Got FoodDesc " + foodDesc.Id + " " + foodDesc.Name);
+                                     /*         try
+                                               {
+                                                   phenylData1 = _context.NutritionData.ToList();
+                                                   if (phenylData1.Count > 0)
+                                                   {
+                                                       foreach (NutritionData data in phenylData1)
+                                                       {
+                                                           //   
+                                                           if (!data.Id.Equals(508))
+                                                           {
+                                                           }
+                                                           else
+                                                           {
+
+                                                            //   log(data.Id + " " + data.FoodId);
+                                                               if (!data.FoodId.Equals(foodDesc.Id))
+                                                               {
+                                                               }
+                                                               else
+                                                               {
+
+                                                                   log("Got data phenyne " + data.Amount1);
+                                                                   food.Phenylalanine_g = Convert.ToDouble(data.Amount1);
+                                                                   break;
+                                                               }
+                                                           }
+
+                                                       }
+                                                   }
+                                                   else
+                                                   {
+*/
+
+                                                       List<NutritionData> phenylData = new List<NutritionData>();
+                                                       phenylData = _context.NutritionData.ToList().Where(d => d.Id.ToString() == "508").ToList();
+                                                       {
+                                                           log("Got PhenylData ");
+                                                           if (phenylData.Count > 0)
+                                                           {
+                                                               log("Got PhenylData Count " + phenylData.Count);
+                                                               log("Got PhenylData 0 id [" + phenylData[0].FoodId + "][" + phenylData[0].Id + "][" + phenylData[0].Amount1 + "]");
+                                                               log("Got PhenylData 1 id [" + phenylData[1].FoodId + "][" + phenylData[1].Id + "][" + phenylData[1].Amount1 + "]");
+                                                               log("Got PhenylData 2 id [" + phenylData[2].FoodId + "][" + phenylData[2].Id + "][" + phenylData[2].Amount1 + "]");
+                                                               log("Got PhenylData 3 id [" + phenylData[3].FoodId + "][" + phenylData[3].Id + "][" + phenylData[3].Amount1 + "]");
+                                                               log("Got foodInfo id [" + foodInfo.Id + "]");
+
+                                                               NutritionData phenylForFood = null;
+
+                                                               phenylForFood = phenylData.Where(dt => dt.FoodId.ToString().Equals(foodDesc.Id.ToString())).FirstOrDefault();
+                                                               if (phenylForFood != null)
+                                                               {
+                                                                   log("Got phenyl1 " + phenylForFood.Id + " " + phenylForFood.FoodId + " " + phenylForFood.Amount1);
+                                                                   food.Phenylalanine_g = Convert.ToDouble(phenylForFood.Amount1);
+                                                               }
+                                                               else
+                                                               {
+      
+
+                                        log("Got cached foodDesc " + foodDesc.Id + " " + foodDesc.Name);
+                                                            phenyl = (_context.NutritionData.Where(d => d.FoodId.ToString() == foodDesc.Id.ToString()).Where(dt=> dt.Id.ToString().Equals("508")).First());
+                                                            if (phenyl != null)
+                                                            {
+
+
+                                                                log("Got phenyl2 " + phenyl.Id + " " + phenyl.FoodId + " " + phenyl.Amount1);
+                                                                food.Phenylalanine_g = Convert.ToDouble(phenyl.Amount1);
+                                                            }
+                                                     }
+                                                       }
+                                              }
+
+                                           }
+                                     /*    }
+                                        catch (Exception e)
+                                        {
+                                            log(e.Message);
+                                            if (e.InnerException != null)
+                                                log(e.InnerException.InnerException.Message);
+                                        }  //
+                                  }
+                             */        
+                                }
+                                catch (Exception e)
+                                {
+                                    log(e.Message);
+                                    if (e.InnerException != null)
+                                        log(e.InnerException.InnerException.Message);
+                                }
+
+                            }
+                            catch (Exception e)
+                            {
+                                log(e.Message);
+                                if(e.InnerException!=null)
+                                log(e.InnerException.InnerException.Message);
+                            }
+                        }
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    log(e.Message);
+                    if (e.InnerException != null) log(e.InnerException.InnerException.Message);
+                }
+            }
+
+            return Ok(list);
+        }

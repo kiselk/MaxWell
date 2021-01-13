@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             x:Class="MaxWell.Controls.Images.ImageLayoutView"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:controls1="clr-namespace:MaxWell.Controls"
+             xmlns:cats="clr-namespace:MaxWell.Controls.Cats"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:forms1="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:common="clr-namespace:MaxWell.Controls.Common;assembly=MaxWell"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+     <ContentView.Resources>
+          <ResourceDictionary>
+              <converters:DateTimeToLocalDateConverter x:Key="dateConverter" />
+              <converters:AgeConverter x:Key="ageConverter" />
+          </ResourceDictionary>
+        </ContentView.Resources>
+    <ContentView.Content>
+
+        <Grid RowSpacing="5" ColumnSpacing="0" Margin="10,10" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+<!--
+        <Image Source="{Binding ImageAsImageStream}" x:Name="MainImage" Aspect="AspectFill" Grid.RowSpan="2" />
+               
+            -->
+            <forms:CachedImage 
+                Grid.Row="0" Grid.Column="0" HeightRequest="200" WidthRequest="450" Source="{Binding ImageUrl}"
+                x:Name="MainImage" 
+              Aspect="AspectFit"
+                Grid.RowSpan="2"
+                
+                IsOpaque="true"
+                CacheDuration="0"
+                FadeAnimationForCachedImages="true"
+                FadeAnimationEnabled="true"
+                >
+              <!--   <common:CachedImageCustomControl.Transformations>
+                 <transformations:RoundedTransformation Radius="30"/>
+               DownsampleToViewSize="true"   <transformations:CropTransformation ZoomFactor="1" XOffset="0" YOffset="10" CropWidthRatio="0.5" CropHeightRatio="0.5" /> 
+
+                   
+            </common:CachedImageCustomControl.Transformations>
+            -->    </forms:CachedImage >
+      
+        </Grid>
+    </ContentView.Content>
+</ContentView>

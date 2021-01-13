@@ -1,0 +1,68 @@
+FoodWeight
+
+ public int FoodId { get; set; } 
+ public int Id { get; set; } 
+ public double Amount { get; set; } 
+ public string MeasurementEn { get; set; } 
+ public string Measurement { get; set; } 
+ public double Unknown1 { get; set; } 
+ public double Unknown2 { get; set; } 
+ public double Unknown3 { get; set; }
+
+FoodDescription
+public int Id { get; set; } 
+ public int GroupId { get; set; } 
+ public string NameEn { get; set; } 
+ public string NameEnUC { get; set; } 
+ public string Name { get; set; } 
+ public double Unknown1 { get; set; } 
+ public double Unknown2 { get; set; } 
+ public double Unknown3 { get; set; } 
+ public double Unknown4 { get; set; } 
+ public double Unknown5 { get; set; } 
+ public double Unknown6 { get; set; } 
+ public double Unknown7 { get; set; } 
+ public double Unknown8 { get; set; } 
+ public double Unknown9 { get; set; } 
+ public double Unknown10 { get; set; }
+
+
+
+FoodGroup
+public int Id { get; set; } 
+ public string NameEn { get; set; } 
+ public string Name { get; set; } 
+
+
+
+NutritionData
+public int FoodId { get; set; } 
+ public int Id { get; set; } 
+ public double Amount1 { get; set; } 
+ public double Amount2 { get; set; } 
+ public double Amount3 { get; set; } 
+ public double Amount4 { get; set; } 
+ public double Amount5 { get; set; } 
+ public double Amount6 { get; set; } 
+ public double Amount7 { get; set; } 
+ public double Amount8 { get; set; } 
+ public double Amount9 { get; set; } 
+ public double Amount10 { get; set; } 
+ public double Amount11 { get; set; } 
+ public double Amount12 { get; set; } 
+ public double Amount13 { get; set; } 
+ public double Amount14 { get; set; } 
+ public double Amount15 { get; set; }
+
+
+
+
+NutritionDefinition
+public int Id { get; set; } 
+ public string MeasurementEn { get; set; } 
+ public string Measurement { get; set; } 
+ public double Abbreviation { get; set; } 
+ public double NameEn { get; set; } 
+ public double Name { get; set; } 
+ public double Unknown1 { get; set; } 
+ public double Unknown2 { get; set; }

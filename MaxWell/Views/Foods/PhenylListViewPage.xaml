@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:foods="clr-namespace:MaxWell.Controls.Foods"
+             Title="{Binding Title}"
+             x:Class="MaxWell.Views.Foods.PhenylListViewPage">
+    <ContentPage.Content>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!--   <StackLayout BackgroundColor="Black" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">  </StackLayout>
+       <Image Source="MainCat"  VerticalOptions="End" Aspect="AspectFit"/> -->
+            <Image Source="bg_4" HorizontalOptions="Fill" Aspect="AspectFill"/>
+
+            <StackLayout BackgroundColor="Transparent">
+                <foods:PhenylDetailView x:Name="phenylDetailView" BindingContext="{Binding}" />
+                <!--   <ScrollView >  <abstractions:CircleImage  WidthRequest="64" HeightRequest="64" x:Name="SomeImage" BindingContext="{Binding SomeImage}"/>
+        <Image x:Name="SomeImage" Source="{Binding SomeImage.DownloadedImageAsImageStream}"/></ScrollView>-->
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

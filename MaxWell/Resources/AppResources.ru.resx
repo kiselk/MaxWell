@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="AddPhoto" xml:space="preserve">
+    <value>Добавить фотографию</value>
+  </data>
+  <data name="Allergens" xml:space="preserve">
+    <value>Аллергены</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Cookoo" xml:space="preserve">
+    <value>Куку</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Dishes" xml:space="preserve">
+    <value>Блюда</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="Food" xml:space="preserve">
+    <value>Еда</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Галерея</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Привет</value>
+  </data>
+  <data name="Ingredients" xml:space="preserve">
+    <value>Ингредиенты</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Загрузка</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Вход</value>
+    <comment>Comment</comment>
+  </data>
+  <data name="Meals" xml:space="preserve">
+    <value>Приемы пищи</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Меню</value>
+  </data>
+  <data name="NotLoggedIn" xml:space="preserve">
+    <value>Пользователь не авторизован</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>Люди</value>
+  </data>
+  <data name="Phenyl" xml:space="preserve">
+    <value>Фенилаланин Топ</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Фото</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="Rations" xml:space="preserve">
+    <value>Рационы</value>
+  </data>
+  <data name="Recipes" xml:space="preserve">
+    <value>Рецепты</value>
+  </data>
+  <data name="Todo" xml:space="preserve">
+    <value>Дела</value>
+  </data>
+  <data name="Top" xml:space="preserve">
+    <value>Топ</value>
+  </data>
+</root>

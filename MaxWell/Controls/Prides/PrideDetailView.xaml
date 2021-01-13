@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MaxWell.Controls.Prides.PrideDetailView">
+    <ContentView.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Spacing="20" Padding="15">
+                <StackLayout Orientation="Horizontal">
+                    <abstractions:CircleImage x:Name="selectedImage" Grid.Row="0"  Grid.Column="0" WidthRequest="128" HeightRequest="128" Source="{Binding Pride.ImageAsImageStream, Mode=OneWay}" Aspect="AspectFill"/>
+                    <abstractions:CircleImage Grid.Row="1"  Grid.Column="0" WidthRequest="32" HeightRequest="32" Source="{Binding PersonImageFromId.Result, Mode=OneWay}" Aspect="AspectFill"/>
+                    <Label LineBreakMode="NoWrap"  Grid.Row="2" Grid.Column="0" Text="{Binding PersonNameFromId.Result}" StyleClass="main" FontSize="16" Style="{DynamicResource ListItemTextStyle}"/>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Имя:" FontSize="Small" />
+                            <Editor x:Name="name" Text="{Binding Pride.Name}" Style="{DynamicResource ListItemTextStyle}"
+                                    FontSize="16" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Описание:" FontSize="Small" />
+                            <Editor Text="{Binding Pride.Description}" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <Label Text="День создания" FontSize="Small" />
+                <DatePicker MinimumDate="01/01/1900"
+                            MaximumDate="12/31/2018"
+                            Date="{Binding Pride.CreationDate, Mode=TwoWay}" />
+
+            </StackLayout>
+        </ScrollView>
+      
+    </ContentView.Content>
+</ContentView>

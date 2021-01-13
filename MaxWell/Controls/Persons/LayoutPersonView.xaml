@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             x:Class="MaxWell.Controls.Persons.LayoutPersonView"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:controls1="clr-namespace:MaxWell.Controls"
+             xmlns:cats="clr-namespace:MaxWell.Controls.Cats"
+             xmlns:foods="clr-namespace:MaxWell.Controls.Foods"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:common="clr-namespace:MaxWell.Controls.Common;assembly=MaxWell">
+     <ContentView.Resources>
+          <ResourceDictionary>
+              <converters:DateTimeToLocalDateConverter x:Key="dateConverter" />
+              <converters:AgeConverter x:Key="ageConverter" />
+          </ResourceDictionary>
+        </ContentView.Resources>
+    <ContentView.Content>
+
+        <Grid RowSpacing="5" ColumnSpacing="0" Margin="10,5" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="AUTO"/>
+            </Grid.RowDefinitions>
+<!-- 
+            
+             <Image Source="{Binding ImageAsImageStream}" x:Name="MainImage" Aspect="AspectFill" Grid.RowSpan="2" />
+           
+            -->
+            <forms:CachedImage  Source="{Binding ImageUrl}" HeightRequest="200" WidthRequest="500"  x:Name="MainImage" Aspect="AspectFill" Grid.RowSpan="2" />
+            <Image Source="ShadowOverlay" Grid.RowSpan="2"  Aspect="Fill" VerticalOptions="End" HorizontalOptions="Fill" />
+            <Grid Margin="10" RowSpacing="10" ColumnSpacing="10" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO"/>
+                    <RowDefinition Height="84"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="AUTO"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="AUTO"/>
+                </Grid.ColumnDefinitions>
+                <common:TransparentLabel Text="{Binding Name}" TextColor="#FFFFFF" FontSize="20"  Grid.Row="0" Grid.ColumnSpan="3" LineBreakMode="TailTruncation"/>
+               <controls1:HorizontalScrollView   Grid.Row="1" Grid.Column="0" HeightRequest="64"  Orientation="Horizontal"  ItemsSource="{Binding FoodModelList}">
+                    <controls1:HorizontalScrollView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <foods:FoodSmallView BindingContext="{Binding}"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </controls1:HorizontalScrollView.ItemTemplate>
+                </controls1:HorizontalScrollView>
+                <StackLayout Orientation="Horizontal"  VerticalOptions="Center" Grid.Column="2" Grid.Row="1" Spacing="5">
+                    <common:TransparentLabel Text="Продуктов: " TextColor="#FFFFFF" FontSize="12" />
+                    <common:TransparentLabel Text="{Binding FoodsCount, StringFormat='{0:N0}'}"  TextColor="#FFFFFF" FontSize="12" />
+                </StackLayout>
+
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xForms="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+           
+             x:Class="MaxWell.Views.Calendar.SFCalendarViewPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <xForms:SfCalendar  Grid.Row="0"  Grid.Column="0" 
+                               x:Name="SfCalendar" DataSource="{Binding}" ShowInlineEvents="true" ViewMode="MonthView" 
+                               TransitionMode="Scroll" 
+                               EnableSwiping="true" 
+                               NavigationDirection="Horizontal"
+                               FirstDayofWeek="1"
+                               HorizontalOptions="FillAndExpand" HeightRequest="1000"
+                               InlineViewMode="Agenda"
+                                OnInlineLoaded="calendar_OnInlineLoaded">
+            
+            </xForms:SfCalendar>
+   </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

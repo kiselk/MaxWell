@@ -1,0 +1,38 @@
+Bmce+9aHdOoVtE7fS3B07tfj7Bc=
+
+53:CF:8D:38:09:CB:3E:5E:54:99:AF:B0:D9:36:11:16:71:B8:52:11
+CF:24:16:97:49:E0:10:EF:BD:57:FB:5B:F3:08:4B:17:5D:F1:1A:CF
+
+String[] fingerprints = VKUtil.getCertificateFingerprint(this, this.getPackageName());
+ID приложения:	6790095
+Защищённый ключ:	
+
+l3Z0OkNco7me7N0l7icU
+
+Сервисный ключ доступа:	
+
+eb946148eb946148eb946148cbebf3fa87eeb94eb946148b78e046453121d7c72118258
+
+Состояние:	
+ 
+Приложение отключено
+ 
+Первый запрос к API:	
+Установка приложения:	Не требуется
+Open API:	Выключен
+Push-уведомления:	Не подключены
+Настройки SDK
+App Bundle ID для iOS:	
+online.vmobile.MaxWell
+App Id для iOS:	
+Название пакета
+для Android:	
+online.vmobile.MaxWell
+Main activity для Android:	
+online.vmobile.MaxWell.MainActivity
+Отпечаток сертификата
+для Android:
+Добавить ещё
+
+Bmce+9aHdOoVtE7fS3B07tfj7Bc=
+Windows App ID:	

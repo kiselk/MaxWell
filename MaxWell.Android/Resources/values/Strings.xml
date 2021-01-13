@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">QuickTodo.Android</string>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">Splash Screen Sample</string>
+  <integer name="com_vk_sdk_AppId">6810503</integer>
+  <string name="vk_data_theme">vk6810503</string>
+
+<string name="facebook_app_id">312066559441483</string>
+<string name="fb_login_protocol_scheme">fb312066559441483</string>
+</resources>

@@ -1,0 +1,34 @@
+      SELECT 
+[info.NutritionDataCollection].[FoodDescriptionId], 
+[info.NutritionDataCollection].[NutritionDefinitionId],
+[info.NutritionDataCollection].[Amount1], 
+[info.NutritionDataCollection].[Amount10], 
+[info.NutritionDataCollection].[Amount11], 
+[info.NutritionDataCollection].[Amount12], 
+[info.NutritionDataCollection].[Amount13], 
+[info.NutritionDataCollection].[Amount14],
+[info.NutritionDataCollection].[Amount15], 
+[info.NutritionDataCollection].[Amount2], 
+[info.NutritionDataCollection].[Amount3], 
+[info.NutritionDataCollection].[Amount4], 
+[info.NutritionDataCollection].[Amount5], 
+[info.NutritionDataCollection].[Amount6],
+[info.NutritionDataCollection].[Amount7], 
+[info.NutritionDataCollection].[Amount8], 
+[info.NutritionDataCollection].[Amount9],
+ 
+
+[info.NutritionDataCollection].[FoodId], 
+
+[info.NutritionDataCollection].[NutritionDataId]
+   
+   FROM [NutritionData] AS [info.NutritionDataCollection]
+
+      INNER JOIN (
+          SELECT TOP(1) [info0].[FoodDescriptionId], CAST(LEN([info0].[Name]) AS int) AS [c]
+          FROM [FoodDescription] AS [info0]
+          WHERE ([info0].[Name] LIKE @__food_Name_0 + N'%' AND (LEFT([info0].[Name], LEN(@__food_Name_0)) = @__food_Name_0)) OR (@__food_Name_0 = N'')
+          ORDER BY [c], [info0].[FoodDescriptionId]
+      ) AS [t] ON [info.NutritionDataCollection].[FoodDescriptionId] = [t].[FoodDescriptionId]
+      ORDER BY [t].[c], [t].[FoodDescriptionId]
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'FoodId'.

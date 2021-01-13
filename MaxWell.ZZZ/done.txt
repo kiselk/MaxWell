@@ -1,0 +1,8 @@
+1/10/2019
++icons fitted size android ios
+splash screen
+move backgrounds and icons in folders
+Xamarin.FFImageLoading
+foods for users
+dishes
+user keystores for all projects

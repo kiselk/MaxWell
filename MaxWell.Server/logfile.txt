@@ -1,0 +1,151 @@
+log message
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+phenyl amount MaxWell.Models.Foods.NutritionData
+phenyl amount MaxWell.Models.Foods.NutritionData
+phenyl amount MaxWell.Models.Foods.NutritionData
+phenyl amount MaxWell.Models.Foods.NutritionData
+phenyl amount MaxWell.Models.Foods.NutritionData
+init
+list
+begin
+end
+phenyl amount MaxWell.Models.Foods.NutritionData
+init
+list
+begin
+end
+init
+list
+begin
+end
+phenyl amount System.Collections.Generic.List`1[MaxWell.Models.Foods.NutritionData]
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+init
+list
+begin
+end
+init
+list
+begin
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+phenyl amount 4.736
+phenyl amount 15 4.736
+phenyl amount 0.723
+phenyl amount 16 0.723
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+init
+list
+begin
+end
+Found 100
+init
+list
+begin
+end
+Found 100
+Collection was modified; enumeration operation may not execute.
+Found 100
+Collection was modified; enumeration operation may not execute.
+init
+list
+begin
+end
+Found 100
+init
+list
+begin
+end
+Found 8789
+init
+list
+begin
+end
+init
+list
+begin
+end
+Found 8789
+init
+list
+begin
+end
+init
+init
+list
+begin
+end

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MaxWell.Controls"
+             x:Class="MaxWell.Controls.Persons.PersonCommentsByListView">
+  <ContentView.Content>
+      <StackLayout>
+          <ListView 
+              ItemsSource="{Binding CommentByModelList}"
+              x:Name="CommentsByList"
+              HasUnevenRows="true"
+              RefreshCommand="{Binding LoadItemsCommand}"
+              IsPullToRefreshEnabled="true"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              CachingStrategy="RecycleElement"
+              ItemSelected="OnItemSelected">
+              <ListView.ItemTemplate>
+                  <DataTemplate>
+                      <ViewCell>
+                          <controls:CatView BindingContext="{Binding}" />
+
+
+
+                      </ViewCell>
+                  </DataTemplate>
+              </ListView.ItemTemplate>
+          </ListView>
+      </StackLayout>
+    </ContentView.Content>
+</ContentView>

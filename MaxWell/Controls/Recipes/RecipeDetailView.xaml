@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+
+             xmlns:common="clr-namespace:MaxWell.Controls.Common"
+             xmlns:controls="clr-namespace:MaxWell.Controls;assembly=MaxWell"
+             x:Class="MaxWell.Controls.Recipes.RecipeDetailView">
+    <ContentView.Resources>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout BackgroundColor="Transparent" Orientation="Vertical" Spacing="20" Padding="15" HeightRequest ="1000">
+            <!--AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All">-->
+            
+            <!-- NUTRITION LIST VerticalOptions="FillAndExpand"  -->
+
+            <ListView x:Name="NutritionList" HasUnevenRows="True" MinimumHeightRequest="500"
+                      HorizontalOptions="FillAndExpand"
+                      BackgroundColor="Transparent" Margin="5"
+                      SeparatorVisibility="None" 
+                      CachingStrategy="RecycleElement" 
+                      Grid.Row="3">
+               <ListView.Header>
+                    <Grid RowSpacing="5" ColumnSpacing="0" Margin="10,10"   HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="250" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <forms:CachedImage x:Name="selectedImage" Source="{Binding Recipe.ImageUrl}" HeightRequest="200"
+                                  VerticalOptions="Start"  HorizontalOptions="FillAndExpand" Aspect="AspectFit" />
+                        <StackLayout>
+                            <common:TransparentEntry PlaceholderColor="White" TextColor="White" Placeholder="Название" x:Name="RecipeNameLabel" Text="{Binding Recipe.Name}" FontSize="25" />
+                             <common:TransparentLabel TextColor="White" x:Name="RecipeWeightLabel"
+                                                     Text="{Binding Weight, StringFormat='Общий вес: {0} г.'}" FontSize="14" />
+                            <common:TransparentEntry PlaceholderColor="White" TextColor="White" Placeholder="Описание" x:Name="RecipeDescriptionLabel" Text="{Binding Recipe.Description}"
+                                             FontSize="12" />
+                            <common:TransparentLabel TextColor="White" x:Name="RecipeCreateDateTimeLabel"
+                                             Text="{Binding Recipe.CreateDateTime}" FontSize="12" />
+                           
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Row="1" Orientation="Horizontal">
+                            <common:TransparentLabel Text="Игредиенты" FontSize="Large" TextColor="White" />
+                            <common:TransparentButton x:Name="AddIngredientButton" Text="+"
+                                          Clicked="AddIngredientButtonClicked" />
+                        </StackLayout>
+
+
+                        <!-- INGREDIENT LIST -->
+
+                        <controls:HorizontalScrollView HeightRequest="200" Orientation="Horizontal" x:Name="IngredientsScrollView"
+                                           ItemSelected="OnIngredientItemSelected"   HorizontalOptions="FillAndExpand"
+                                           ItemsSource="{Binding IngredientModelList}"
+                                           Grid.Row="2">
+                            <controls:HorizontalScrollView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Margin="5,0,5,0" WidthRequest="250" HeightRequest="250">
+                                            <forms:CachedImage HorizontalOptions="Center" Source="{Binding ImageUrl}"
+                                                   WidthRequest="150" HeightRequest="150" Aspect="AspectFit" />
+                                            <common:TransparentLabel HorizontalTextAlignment="Center" Margin="0,-5,0,0"
+                                                         LineBreakMode="TailTruncation" FontSize="20"
+                                                         Text="{Binding Name}" />
+
+                                            <common:TransparentLabel HorizontalTextAlignment="Center" Margin="0,-5,0,0"
+                                                         LineBreakMode="TailTruncation" FontSize="20"
+                                                         Text="{Binding Amount, StringFormat='{0} г.'}" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </controls:HorizontalScrollView.ItemTemplate>
+                        </controls:HorizontalScrollView>
+
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Tapped="OnNutrientSelected">
+                            <Grid BackgroundColor="Transparent" Padding="5" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="55" />
+                                    <ColumnDefinition Width="35" />
+
+                                </Grid.ColumnDefinitions>
+                                <common:TransparentLabel Grid.Column="0" Text="{Binding NutritionDefinition.Name}" />
+                                <common:TransparentLabel Grid.Column="1" Text="{Binding NutritionDefinition.NameEn}" />
+
+
+                                <common:TransparentLabel Grid.Column="2" Text="{Binding Amount1}"
+                                                         HorizontalTextAlignment="End" />
+                                <common:TransparentLabel Grid.Column="3"
+                                                         Text="{Binding NutritionDefinition.Measurement}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+
+            </ListView>
+         
+        </StackLayout>
+
+    </ContentView.Content>
+</ContentView>

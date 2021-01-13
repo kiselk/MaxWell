@@ -1,0 +1,45 @@
+   log("Doing food " + phenyl_select.Amount1);
+
+                    FoodDescription foodDesc = null;
+                    NutritionData phenyl = null;
+                    NutritionData phenylForFood = null;
+
+                    if (food.Protein_g.Equals(0.0) && food.Fats_g.Equals(0.0) && food.Carbs_g.Equals(0.0))
+                    {
+                        log("Doing food " + food.Name);
+                        var foodInfo = (_context.FoodInfo.Where(info => info.Shrt_Desc_Ru.StartsWith(food.Name)).OrderBy(info => info.Shrt_Desc_Ru.Length).FirstOrDefault());
+                        foodDesc = (_context.FoodDescription.Where(info => info.Name.StartsWith(foodInfo.Shrt_Desc_Ru)).OrderBy(info => info.Name.Length).FirstOrDefault());
+
+                        log("Got FoodInfo " + foodInfo.Id + " " + foodInfo.Shrt_Desc_Ru);
+                        food.Protein_g = Convert.ToDouble(foodInfo.Protein_g); //203
+                        food.Fats_g = Convert.ToDouble(foodInfo.FA_Sat_g); //204
+                        food.Carbs_g = Convert.ToDouble(foodInfo.Carbohydrt_g); //205
+                        food.Calcium_mg = Convert.ToDouble(foodInfo.Calcium_mg); //301
+
+                        log("Got FoodDesc " + foodDesc.Id + " " + foodDesc.Name);
+                        phenylData = _context.NutritionData.ToList().Where(d => d.Id.ToString() == "508").ToList();
+                        phenyl = (_context.NutritionData.Where(d => d.FoodId== foodDesc.Id).FirstOrDefault(dt => dt.Id.ToString().Equals("508")));
+                      
+                        phenylForFood = phenylData2.First(dt => dt.FoodId.Equals(foodDesc.Id));
+                        if (phenylForFood != null)
+                        {
+                            log("Got phenyl1 " + phenylForFood.Id + " " + phenylForFood.FoodId + " " + phenylForFood.Amount1);
+                            food.Phenylalanine_g = Convert.ToDouble(phenylForFood.Amount1);
+                        }
+                        else
+                        {
+                            log("Got cached foodDesc " + foodDesc.Id + " " + foodDesc.Name);
+                            if (phenyl != null)
+                            {
+                                log("Got phenyl2 " + phenyl.Id + " " + phenyl.FoodId + " " + phenyl.Amount1);
+                                food.Phenylalanine_g = Convert.ToDouble(phenyl.Amount1);
+                            }
+                        }
+                    }
+                }
+
+                catch (Exception e)
+                {
+                    log(e.Message);
+                    if (e.InnerException != null) log(e.InnerException.InnerException.Message);
+                }

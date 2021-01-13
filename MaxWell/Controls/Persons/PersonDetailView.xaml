@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MaxWell.Controls.Persons.PersonDetailView"
+             xmlns:controls="clr-namespace:MaxWell.Controls.Persons"
+             xmlns:prides="clr-namespace:MaxWell.Controls.Prides"
+             xmlns:comments="clr-namespace:MaxWell.Controls.Comments"
+
+             xmlns:cats="clr-namespace:MaxWell.Controls.Cats"
+             xmlns:xForms="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+             xmlns:controls1="clr-namespace:MaxWell.Controls"
+             xmlns:common="clr-namespace:MaxWell.Controls.Common"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    <ContentView.Content>
+
+   
+            <StackLayout BackgroundColor="Transparent" Orientation="Vertical" Spacing="20" Padding="15">
+                <forms:CachedImage x:Name="selectedImage" Source="{Binding Person.ImageUrl}" HeightRequest="200"
+                       HorizontalOptions="Fill" Aspect="AspectFill" />
+
+                <StackLayout Orientation="Horizontal">
+                    <!--  <abstractions:CircleImage x:Name="selectedImage" Grid.Row="0"  Grid.Column="0" WidthRequest="128" HeightRequest="128" Source="{Binding Person.ImageAsImageStream}" Aspect="AspectFill"/>-->
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <common:TransparentLabel Text="Имя:" FontSize="Small" />
+                        <common:TransparentLabel  x:Name="name"
+                                    Text="{Binding Person.Name}" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <common:TransparentLabel Text="Описание:" FontSize="Small" />
+                        <common:TransparentLabel Text="{Binding Person.Description}"
+                                    HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <common:TransparentLabel Text="Почта:" FontSize="Small" />
+                        <common:TransparentLabel Text="{Binding Person.Email}"
+                                    HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <common:TransparentLabel Text="Телефон:" FontSize="Small" />
+                        <common:TransparentLabel Text="{Binding Person.Phone}"
+                                    HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <common:TransparentLabel Text="ВКонтакте:" FontSize="Small" />
+                        <common:TransparentLabel Text="{Binding Person.VKUserId}"
+                                    HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <common:TransparentLabel Text="Пол:" FontSize="Small" />
+                        <common:TransparentLabel Text="{Binding Person.Gender}"
+                                    HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <common:TransparentLabel Text="День Рождения" FontSize="Small" HorizontalOptions="Fill" />
+                            <DatePicker TextColor="White" BackgroundColor="Transparent" MinimumDate="01/01/1900"
+                                        MaximumDate="12/31/2018"
+                                        Date="{Binding Person.Birthday, Mode=TwoWay}" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                <common:TransparentLabel Text="Продукты" FontSize="Large" TextColor="White" />
+                    <common:TransparentButton x:Name="AddFoodButton" Text="+" 
+                            Clicked="AddFoodClicked" />
+                </StackLayout>
+
+                <controls1:HorizontalScrollView HeightRequest="200" Orientation="Horizontal" x:Name="FoodsScrollView" ItemSelected="OnFoodItemSelected"
+                                                ItemsSource="{Binding FoodModelList}">
+                    <controls1:HorizontalScrollView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="5,0,5,0" WidthRequest="150" HeightRequest="150">
+                                    <forms:CachedImage HorizontalOptions="Start" Source="{Binding Description}"
+                                           WidthRequest="150" HeightRequest="150" />
+                                <common:TransparentLabel HorizontalTextAlignment="Center" Margin="0,-5,0,0"
+                                           LineBreakMode="TailTruncation" FontSize="12" Text="{Binding Name}"
+                                           TextColor="White" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </controls1:HorizontalScrollView.ItemTemplate>
+                </controls1:HorizontalScrollView>
+
+            <common:TransparentLabel Text="Комментарии" FontSize="Large" />
+             <!--   <ListView
+                    ItemsSource="{Binding CommentByModelList}"
+                    x:Name="CommentsByList"
+                    HasUnevenRows="true"
+                    CachingStrategy="RecycleElement">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <comments:CommentView BindingContext="{Binding}" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            <Label Text="О Пользователе" TextColor="White" BackgroundColor="Transparent" FontSize="Large" />
+                <StackLayout>
+                    <ListView
+                        ItemsSource="{Binding CommentForModelList}"
+                        x:Name="CommentsForList"
+                        HasUnevenRows="true"
+                        CachingStrategy="RecycleElement">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <comments:CommentView BindingContext="{Binding}" />
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+         -->
+    
+      </StackLayout> </ContentView.Content>
+</ContentView>

@@ -1,0 +1,6 @@
+make model in MaxWell.Shared.Models
+
+server
+create schema in C:\works\MaxWell.Server\Migrations\20170901142627_Initial.cs
+update context C:\works\MaxWell.Server\Data\MyDatabaseContext.cs
+create controller

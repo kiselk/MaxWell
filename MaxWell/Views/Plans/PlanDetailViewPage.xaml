@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             xmlns:plans="clr-namespace:MaxWell.Controls.Plans"
+             xmlns:prides="clr-namespace:MaxWell.Controls.Prides"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MaxWell.Views.Plans.PlanDetailViewPage"
+             x:Name="PlanDetailViewPageName"
+             Title="{Binding Title}"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary"  Icon="ic_save" Clicked="PlanSaveClicked" />
+        <ToolbarItem  Order="Primary"  Icon="ic_delete" Clicked="PlanDeleteClicked" />
+        <ToolbarItem  Order="Primary"  Icon="ic_photo" Clicked="PlanPhotoClicked" />
+    </ContentPage.ToolbarItems>
+
+    <Grid BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="bg_21" HorizontalOptions="Fill" Aspect="AspectFill" BackgroundColor="Transparent"/>
+        <StackLayout >
+            <plans:PlanDetailView x:Name="planDetailView" BindingContext="{Binding}" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

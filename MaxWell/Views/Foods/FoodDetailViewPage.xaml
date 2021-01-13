@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             xmlns:foods="clr-namespace:MaxWell.Controls.Foods"
+             xmlns:prides="clr-namespace:MaxWell.Controls.Prides"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MaxWell.Views.Foods.FoodDetailViewPage"
+         
+             Title="{Binding Title}"
+             x:Name="TbVisits">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary"  Icon="ic_speak" Clicked="SpeakButtonClicked" />
+        <ToolbarItem  Order="Primary"  Icon="ic_save" Clicked="ButtonClicked" />
+        <ToolbarItem  Order="Primary"  Icon="ic_delete" Clicked="DeleteClicked" />
+        <ToolbarItem  Order="Primary"  Icon="ic_photo" Clicked="AddPhoto_Clicked" />
+      
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateTimeToLocalDateConverter x:Key="DateConverter" />
+            <converters:AgeConverter x:Key="AgeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--   <StackLayout BackgroundColor="Black" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">  </StackLayout>
+       <Image Source="MainCat"  VerticalOptions="End" Aspect="AspectFit"/> -->
+        <Image Source="bg_7" HorizontalOptions="Fill" Aspect="AspectFill"/>
+
+        <StackLayout >
+            <foods:FoodDetailView x:Name="foodDetailView" BindingContext="{Binding}" />
+            <!--< ScrollView BackgroundColor="Transparent">    <abstractions:CircleImage  WidthRequest="64" HeightRequest="64" x:Name="SomeImage" BindingContext="{Binding SomeImage}"/>
+        <Image x:Name="SomeImage" Source="{Binding SomeImage.DownloadedImageAsImageStream}"/>    </>-->
+        </StackLayout>
+
+
+
+    </Grid>
+</ContentPage>

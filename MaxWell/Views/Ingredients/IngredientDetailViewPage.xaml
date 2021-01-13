@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             xmlns:ingredients="clr-namespace:MaxWell.Controls.Ingredients"
+             xmlns:prides="clr-namespace:MaxWell.Controls.Prides"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MaxWell.Views.Ingredients.IngredientDetailViewPage"
+             x:Name="IngredientDetailViewPageName"
+             Title="{Binding Title}"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary"  Icon="ic_save" Clicked="IngredientSaveClicked" />
+        <ToolbarItem  Order="Primary"  Icon="ic_delete" Clicked="IngredientDeleteClicked" />
+        <ToolbarItem  Order="Primary"  Icon="ic_photo" Clicked="IngredientPhotoClicked" />
+    </ContentPage.ToolbarItems>
+
+    <Grid BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="bg_22" HorizontalOptions="Fill" Aspect="AspectFill" BackgroundColor="Transparent"/>
+        <StackLayout >
+            <ingredients:IngredientDetailView x:Name="ingredientDetailView" BindingContext="{Binding}" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

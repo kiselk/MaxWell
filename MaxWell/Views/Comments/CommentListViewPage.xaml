@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:MaxWell.ViewModels.Comments"
+            xmlns:comments="clr-namespace:MaxWell.Controls.Comments"
+
+          
+             x:Class="MaxWell.Views.Comments.CommentListViewPage"
+              Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary" Icon="ic_add" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.BindingContext>
+        <viewModels:CommentListViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+            
+        <ScrollView>
+            <StackLayout BackgroundColor="White">
+                <ListView x:Name="CommentListView" 
+                ItemsSource="{Binding CommentModelList}"
+                VerticalOptions="FillAndExpand"
+                 HasUnevenRows="true"
+                 RefreshCommand="{Binding LoadItemsCommand}"
+                 IsPullToRefreshEnabled="true"
+                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                 CachingStrategy="RecycleElement"
+                 ItemSelected="OnItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <comments:CommentView BindingContext="{Binding}" />
+
+
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

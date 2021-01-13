@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             xmlns:persons="clr-namespace:MaxWell.Controls.Persons"
+             xmlns:prides="clr-namespace:MaxWell.Controls.Prides"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MaxWell.Views.Main.ProfileViewPage"
+         
+             Title="{Binding Title}"
+             x:Name="TbVisits">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary" Text="Сохранить" Clicked="ButtonClicked" />
+        <ToolbarItem  Order="Primary" Text="Удалить" Clicked="DeleteClicked" />
+        <ToolbarItem  Order="Primary" Text="Фото" Clicked="AddPhoto_Clicked" />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateTimeToLocalDateConverter x:Key="DateConverter" />
+            <converters:AgeConverter x:Key="AgeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="bg_8"   HorizontalOptions="Fill" Aspect="AspectFill"/>
+        <persons:PersonDetailView x:Name="personDetailView" BindingContext="{Binding}" />
+        <!--     <abstractions:CircleImage  WidthRequest="64" HeightRequest="64" x:Name="SomeImage" BindingContext="{Binding SomeImage}"/>-->
+     </Grid>
+
+</ContentPage>

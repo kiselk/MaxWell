@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             x:Class="MaxWell.Controls.Foods.FoodLayoutView"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:controls1="clr-namespace:MaxWell.Controls"
+             xmlns:cats="clr-namespace:MaxWell.Controls.Cats"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:forms1="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:common="clr-namespace:MaxWell.Controls.Common;assembly=MaxWell"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+     <ContentView.Resources>
+          <ResourceDictionary>
+              <converters:DateTimeToLocalDateConverter x:Key="dateConverter" />
+              <converters:AgeConverter x:Key="ageConverter" />
+          </ResourceDictionary>
+        </ContentView.Resources>
+    <ContentView.Content>
+
+        <Grid RowSpacing="5" ColumnSpacing="0" Margin="10,10" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+<!--
+        <Image Source="{Binding ImageAsImageStream}" x:Name="MainImage" Aspect="AspectFill" Grid.RowSpan="2" />
+               
+            -->
+            <forms:CachedImage 
+                Grid.Row="0" Grid.Column="0" HeightRequest="250" WidthRequest="400" Source="{Binding Description}"
+                x:Name="MainImage" 
+              Aspect="AspectFit"
+                Grid.RowSpan="2"
+                
+                IsOpaque="true"
+                CacheDuration="0"
+                FadeAnimationForCachedImages="true"
+                FadeAnimationEnabled="true"
+                >
+              <!--   <common:CachedImageCustomControl.Transformations>
+                 <transformations:RoundedTransformation Radius="30"/>
+               DownsampleToViewSize="true"   <transformations:CropTransformation ZoomFactor="1" XOffset="0" YOffset="10" CropWidthRatio="0.5" CropHeightRatio="0.5" /> 
+
+                   
+            </common:CachedImageCustomControl.Transformations>
+            -->    </forms:CachedImage >
+        <!--    <forms1:AnimationView HeightRequest="200" WidthRequest="500"  Grid.Row="0" Grid.Column="0" 
+                                  Grid.RowSpan="2" 
+                                 Animation="loading.json" 
+                                 Loop="true" 
+                                 AutoPlay="true"
+                      
+                                  IsVisible="{Binding Source={x:Reference MainImage}, Path=IsLoading}"/>
+
+            <forms1:AnimationView HeightRequest="200" WidthRequest="500"  Grid.Row="0" Grid.Column="0" 
+                                  Grid.RowSpan="2" 
+                                 Animation="error.json" 
+                                 Loop="false" 
+                                 AutoPlay="true"
+                            
+                                 IsVisible="{Binding Source={x:Reference MainImage}, Path=IsFailed}"/>
+
+            <Image Grid.Row="0" HeightRequest="200" WidthRequest="500"  Grid.Column="0"  Source="ShadowOverlay" Grid.RowSpan="2"  Aspect="Fill" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+ -->           <Grid Grid.Row="0" Grid.Column="0"  Margin="10" RowSpacing="10" ColumnSpacing="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="128"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+            <!--     <Frame OutlineColor="Black" Grid.Row="0" Grid.ColumnSpan="3" >
+                    <Label Text="Rank" TextColor="#FFFFFF"   FontSize="20"  LineBreakMode="NoWrap" />
+                </Frame>
+          -->
+                <common:TransparentLabel Text="{Binding Name}" FontSize="30"  Grid.Row="1" Grid.ColumnSpan="3" LineBreakMode="TailTruncation"/>
+                <common:TransparentLabel Text="{Binding NameEn}" FontSize="30"  Grid.Row="2" Grid.ColumnSpan="3"  LineBreakMode="TailTruncation"/>
+                              <!--  <controls1:HorizontalScrollView   Grid.Row="1" Grid.Column="0" HeightRequest="64"  Orientation="Horizontal"  ItemsSource="{Binding AllModelList}">
+                    <controls1:HorizontalScrollView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <cats:CatSmallView BindingContext="{Binding}"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </controls1:HorizontalScrollView.ItemTemplate>
+                </controls1:HorizontalScrollView>
+Style="{StaticResource TitleLabel}"    <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalOptions="Fill">
+                    <controls:CircleImage   WidthRequest="32" HeightRequest="32" Source="{Binding FoodImageFromId.Result, Mode=OneWay}" Aspect="AspectFill" HorizontalOptions="Start"/>
+                    <Label LineBreakMode="NoWrap"  Text="{Binding FoodNameFromId.Result}" StyleClass="main" FontSize="16" Style="{DynamicResource ListItemTextStyle}"/>
+                </StackLayout>
+
+<Label Text="{Binding Handle}" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" Style="{StaticResource HandleLabel}" />
+-->
+                <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Row="3" Spacing="0" HorizontalOptions="Fill">
+                  <!--  <Image Source="Eye"/> -->
+                    <Grid Margin="0" HorizontalOptions="Fill" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="15"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="15"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="65"/>
+                            <ColumnDefinition Width="35"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="15"/>
+                        </Grid.ColumnDefinitions>
+                        <common:TransparentLabel HorizontalOptions="End"   LineBreakMode="NoWrap" Grid.Column="2" Grid.Row="0" Text="Белки:" FontSize="12" />
+                        <common:TransparentLabel HorizontalOptions="Start" LineBreakMode="NoWrap" Grid.Column="3" Grid.Row="0" Text="{Binding Protein_g, StringFormat='{0:F1} г.'}"   FontSize="12" />
+                        <common:TransparentLabel HorizontalOptions="End"   LineBreakMode="NoWrap" Grid.Column="2" Grid.Row="1" Text="Жиры: " FontSize="12" />
+                        <common:TransparentLabel HorizontalOptions="Start" LineBreakMode="NoWrap" Grid.Column="3" Grid.Row="1" Text="{Binding Fats_g, StringFormat='{0:F1} г.'}"   FontSize="12" />
+                        <common:TransparentLabel HorizontalOptions="End"   LineBreakMode="NoWrap" Grid.Column="2" Grid.Row="2" Text="Углеводы: " FontSize="12" />
+                        <common:TransparentLabel HorizontalOptions="Start" LineBreakMode="NoWrap" Grid.Column="3" Grid.Row="2" Text="{Binding Carbs_g, StringFormat='{0:F1} г.'}" FontSize="12" />
+                        <common:TransparentLabel HorizontalOptions="End"   LineBreakMode="NoWrap" Grid.Column="2" Grid.Row="3" Text="Кальций: " FontSize="12" />
+                        <common:TransparentLabel HorizontalOptions="Start" LineBreakMode="NoWrap" Grid.Column="3" Grid.Row="3" Text="{Binding Calcium_mg, StringFormat='{0:F2} мг.'}"  FontSize="12" />
+                        <common:TransparentLabel HorizontalOptions="End"   LineBreakMode="NoWrap" Grid.Column="2" Grid.Row="4" Text="Фенилаланин: " FontSize="12" />
+                        <common:TransparentLabel HorizontalOptions="Start" LineBreakMode="NoWrap" Grid.Column="3" Grid.Row="4" Text="{Binding Phenylalanine_g, StringFormat='{0:F3} г.'}" FontSize="12" />
+                    </Grid>
+                </StackLayout>
+
+            </Grid>
+            </Grid><!--
+            <Grid Padding="10">
+          <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+
+            <controls:CircleImage Grid.RowSpan="3" WidthRequest="64" HeightRequest="64" Source="{Binding ImageAsImageStream, Mode=OneWay}" Aspect="AspectFill"/>
+                
+           
+            <Image Grid.RowSpan="3" WidthRequest="128" HeightRequest="128" Source="{Binding ImageAsImageStream, Mode=OneWay}" /> 
+          <Label  LineBreakMode="NoWrap"  Grid.Column="1" Text="{Binding Name}" StyleClass="main" FontSize="16" Style="{DynamicResource ListItemTextStyle}"/>
+          <Label  LineBreakMode="NoWrap"  Grid.Row="1" Grid.Column="1" Text="{Binding Description}" StyleClass="mainPageSubtitle" FontSize="13" Style="{DynamicResource ListItemDetailTextStyle}"/>
+            <Label LineBreakMode="NoWrap"  Grid.Row="2" Grid.Column="1" Text="{Binding Birthday,Mode=OneWay}" StyleClass="mainPageSubtitle" FontSize="13" Style="{DynamicResource ListItemDetailTextStyle}"/>
+            <controls1:HorizontalScrollView   Grid.Row="3" Grid.Column="1" HeightRequest="32"  Orientation="Horizontal"  ItemsSource="{Binding CatModelList}">
+                <controls1:HorizontalScrollView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <cats:CatIconView BindingContext="{Binding}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </controls1:HorizontalScrollView.ItemTemplate>
+            </controls1:HorizontalScrollView>
+
+        </Grid>-->
+    </ContentView.Content>
+</ContentView>

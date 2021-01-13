@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MaxWell.Controls.Comments.CommentView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <converters:DateTimeToLocalDateConverter x:Key="dateConverter" />
+            <converters:AgeConverter x:Key="ageConverter" />
+            <converters:CatIdToNameConverter x:Key="CatIdToNameConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition Height="16" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <abstractions:CircleImage Grid.RowSpan="3"  Grid.Column="0" WidthRequest="64" HeightRequest="64" Source="{Binding ImageAsImageStream, Mode=OneWay}" Aspect="AspectFill"/>
+            <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalOptions="Fill">
+            <abstractions:CircleImage   WidthRequest="32" HeightRequest="32" Source="{Binding PersonImageFromId.Result, Mode=OneWay}" Aspect="AspectFill" HorizontalOptions="Start"/>
+            <Label LineBreakMode="NoWrap"  Text="{Binding PersonNameFromId.Result}" StyleClass="main" FontSize="16" Style="{DynamicResource ListItemTextStyle}"/>
+            </StackLayout>
+            <Label LineBreakMode="NoWrap"  Grid.Row="1" Grid.Column="1" Text="{Binding Text}" StyleClass="mainPageSubtitle" FontSize="13" Style="{DynamicResource ListItemDetailTextStyle}"/>
+            <StackLayout Grid.Row="2" Grid.Column="1" >
+                <Label LineBreakMode="NoWrap"  Text="{Binding Date,Mode=OneWay}" StyleClass="mainPageSubtitle" FontSize="13" Style="{DynamicResource ListItemDetailTextStyle}"/>
+            <Label LineBreakMode="NoWrap" Text="{Binding Time,Mode=OneWay}" StyleClass="mainPageSubtitle" FontSize="13" Style="{DynamicResource ListItemDetailTextStyle}"/>
+            </StackLayout>
+        </Grid>
+
+
+</ContentView.Content>
+</ContentView>

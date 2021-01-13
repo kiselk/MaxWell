@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xamarinForms:BottomBarPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:MaxWell.Views"
+            xmlns:cats="clr-namespace:MaxWell.Views.Cats"
+            xmlns:pregnancies="clr-namespace:MaxWell.Views.Pregnancies"
+            xmlns:pomets="clr-namespace:MaxWell.Views.Pomets"
+            xmlns:vyazki="clr-namespace:MaxWell.Views.Vyazki"
+            xmlns:persons="clr-namespace:MaxWell.Views.Persons"
+            xmlns:prides="clr-namespace:MaxWell.Views.Prides"
+            xmlns:comments="clr-namespace:MaxWell.Views.Comments"
+            xmlns:todo="clr-namespace:MaxWell.Views.Todo"
+            xmlns:calendar="clr-namespace:MaxWell.Views.Calendar"
+            xmlns:calculator="clr-namespace:MaxWell.Views.Calculator"
+            xmlns:main="clr-namespace:MaxWell.Views.Main"
+            xmlns:ui="clr-namespace:MaxWell.Views.Main.Deprecated.UI"
+            x:Class="MaxWell.Views.Main.MainPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:xamarinForms="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms"
+            xmlns:foods="clr-namespace:MaxWell.Views.Foods"
+            xmlns:helpers="clr-namespace:MaxWell.Helpers;assembly=MaxWell"
+            BarBackgroundColor="Black"
+            BarTextColor="White" 
+                            xamarinForms:BottomBarPageExtensions.TabColor="Black"
+                            
+                            >     <!--    android:TabbedPage.ToolbarPlacement="Bottom"
+           
+            android:TabbedPage.BarSelectedItemColor="Gray"    
+     android:TabbedPage.BarItemColor="White"    -->
+
+    <xamarinForms:BottomBarPage.Children>
+
+
+        <NavigationPage Title="{helpers:Translate People}" Icon="ic_friends.png" BarBackgroundColor="Black" BarTextColor="White" >
+              <x:Arguments>
+                <persons:RestPersonListViewPage />
+            </x:Arguments>
+        </NavigationPage> 
+    <!--
+        <NavigationPage Title="Календарь">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <calendar:CalendarViewPage />
+            </x:Arguments>
+        </NavigationPage>   
+        
+        <NavigationPage Title="Календарь"      Icon="ic_schedule.png" BarBackgroundColor="Black" BarTextColor="White" >
+     
+         <x:Arguments>
+                <calendar:SFCalendarViewPage />
+            </x:Arguments>
+        </NavigationPage>
+
+-->
+
+        <NavigationPage Title="{helpers:Translate Food}"  Icon="ic_restaurants.png"  BarBackgroundColor="Black" BarTextColor="White"  >
+
+            <x:Arguments>
+                <foods:FoodsListViewPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="{helpers:Translate Top}"     Icon="ic_top.png" BarBackgroundColor="Black" BarTextColor="White" >
+
+            <x:Arguments>
+                <foods:PhenylListViewPage />
+            </x:Arguments>
+        </NavigationPage>
+        <!--    <NavigationPage Title="Калькулятор"  Icon="ic_restaurants.png"  >
+     
+            <x:Arguments>
+                <calculator:CalculatorViewPage />
+            </x:Arguments>
+        </NavigationPage>
+    
+        <NavigationPage Title="Онлайн">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <persons:RestPersonListViewPage />
+            </x:Arguments>
+        </NavigationPage>
+        -->
+
+        <NavigationPage Title="{helpers:Translate Todo}"     Icon="ic_favorites.png" BarBackgroundColor="Black" BarTextColor="White" >
+
+            <x:Arguments>
+                <todo:TodoListPage/>
+            </x:Arguments>
+        </NavigationPage>
+       
+      <!--  -->
+
+<!--
+        <NavigationPage Title="Фото">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <ui:ImageWrapLayoutPage />
+            </x:Arguments>
+        </NavigationPage>
+         <NavigationPage Title="Загрузить">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <crimeanPride:LoadImagePage />
+            </x:Arguments>
+        </NavigationPage>
+
+
+        <NavigationPage Title="Инфо">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:AboutPage />
+            </x:Arguments>
+        </NavigationPage>    
+        
+      <NavigationPage Title="Прайды">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <prides:PrideListViewPage />
+            </x:Arguments>
+        </NavigationPage>  -->
+       <!-- <NavigationPage Title="Комментарии">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <comments:CommentListViewPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Все">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <cats:CatListViewPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Кошки">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <cats:FemalesViewPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Коты">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <cats:MalesViewPage />
+            </x:Arguments>
+        </NavigationPage>
+
+
+        <NavigationPage Title="Котята">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <cats:KittensViewPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Вязки">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <vyazki:VyazkaListViewPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Беременности">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <pregnancies:PregnancyListViewPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Пометы">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="check.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <pomets:PometListViewPage/>
+            </x:Arguments>
+        </NavigationPage>-->
+        <NavigationPage Title="{helpers:Translate Menu}" Icon="ic_menu.png" BarBackgroundColor="Black" BarTextColor="White"  >
+          
+            <x:Arguments>
+                <main:MenuPage />
+            </x:Arguments>
+        </NavigationPage>
+    </xamarinForms:BottomBarPage.Children>
+</xamarinForms:BottomBarPage>

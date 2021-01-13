@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             xmlns:prides="clr-namespace:MaxWell.Controls.Prides"
+             x:Class="MaxWell.Views.Prides.PrideDetailViewPage"
+            
+             Title="{Binding Title}"
+             x:Name="TbVisits">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary" Text="Сохранить" Clicked="ButtonClicked" />
+        <ToolbarItem  Order="Primary" Text="Удалить" Clicked="DeleteClicked" />
+        <ToolbarItem  Order="Primary" Text="Фото" Clicked="AddPhoto_Clicked" />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateTimeToLocalDateConverter x:Key="DateConverter" />
+            <converters:AgeConverter x:Key="AgeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ScrollView>
+        <StackLayout BackgroundColor="White">
+            <prides:PrideDetailView x:Name="prideDetailView" BindingContext="{Binding}" />
+        </StackLayout>
+    </ScrollView>
+    <!--
+    <ScrollView>
+        <StackLayout Orientation="Vertical" Spacing="20" Padding="15">
+            <StackLayout Orientation="Horizontal">
+                <Image Grid.RowSpan="2" x:Name="selectedImage" Source="{Binding ImageAsImageStream, Mode=OneWay}"
+                       HorizontalOptions="Start" />
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="Имя:" FontSize="Small" />
+                        <Editor x:Name="name" Text="{Binding Name}" Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="16" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="Описание:" FontSize="Small" />
+                        <Editor Text="{Binding Description}" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+           
+
+        </StackLayout>
+    </ScrollView>
+    -->
+</ContentPage>

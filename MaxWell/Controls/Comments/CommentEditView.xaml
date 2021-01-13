@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MaxWell.Controls.Comments.CommentEditView">
+
+        <ContentView.Resources>
+            <ResourceDictionary>
+           
+            </ResourceDictionary>
+        </ContentView.Resources>
+        <ContentView.Content>
+
+   
+
+            <ScrollView>
+                <StackLayout Orientation="Vertical" Spacing="20" Padding="15">
+                    <StackLayout Orientation="Horizontal">
+                    <abstractions:CircleImage x:Name="selectedImage" Grid.Row="0"  Grid.Column="0" WidthRequest="128" HeightRequest="128" Source="{Binding Comment.ImageAsImageStream}" Aspect="AspectFill"/>
+                        <abstractions:CircleImage Grid.Row="1"  Grid.Column="0" WidthRequest="32" HeightRequest="32" Source="{Binding PersonImageFromId.Result, Mode=OneWay}" Aspect="AspectFill"/>
+                        <Label LineBreakMode="NoWrap"  Grid.Row="2" Grid.Column="0" Text="{Binding PersonNameFromId.Result}" StyleClass="main" FontSize="16" Style="{DynamicResource ListItemTextStyle}"/>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Editor  Grid.Row="2"  Grid.Column="1"  Text="{Binding Comment.Text}" StyleClass="mainPageSubtitle" FontSize="13" Style="{DynamicResource ListItemDetailTextStyle}"/>
+                        <Label  Grid.Row="3"  Grid.Column="1" LineBreakMode="NoWrap"   Text="{Binding Comment.Date, Mode=OneWay}" StyleClass="mainPageSubtitle" FontSize="13" Style="{DynamicResource ListItemDetailTextStyle}"/>
+
+                    </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+
+            </ScrollView>
+
+
+
+    </ContentView.Content>
+    </ContentView>

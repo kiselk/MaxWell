@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           
+             x:Class="MaxWell.Views.Calculator.CalculatorViewPage">
+    <ContentPage.Content>
+        
+        <ScrollView>
+        <StackLayout BackgroundColor="White">
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="Кошки" />
+                    <Label Grid.Row="0" Grid.Column="2" Text="Коты" />
+                    <Label Grid.Row="0" Grid.Column="3" Text="Котята" />
+                    <Label Grid.Row="0" Grid.Column="4" Text="Итого" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Количество" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding FemaleCatCount, Mode=OneWay}" />
+                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding MaleCatCount, Mode=OneWay}" />
+                    <Label Grid.Row="1" Grid.Column="3" Text="{Binding KittensCount, Mode=OneWay}" />
+                    <Label Grid.Row="1" Grid.Column="4" Text="{Binding CatsCount, Mode=OneWay}" />
+                    <Label Grid.Row="2" Grid.Column="0" Text="Корм в день на одного" />
+                    <Editor Grid.Row="2" Grid.Column="1" Text="{Binding KilosForFemalePerDay}" />
+                    <Editor Grid.Row="2" Grid.Column="2" Text="{Binding KilosForMalePerDay}" />
+                    <Editor Grid.Row="2" Grid.Column="3" Text="{Binding KilosForKittenPerDay}" />
+                    <Editor Grid.Row="2" Grid.Column="4" Text="{Binding KilosForCatPerDay}" />
+                <Label Grid.Row="3" Grid.Column="0" Text="Корм в день на всех" />
+
+                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding KilosForFemalesPerDay, Mode=OneWay}" />
+                    <Label Grid.Row="3" Grid.Column="2" Text="{Binding KilosForMalesPerDay, Mode=OneWay}" />
+                    <Label Grid.Row="3" Grid.Column="3" Text="{Binding KilosForKittensPerDay, Mode=OneWay}" />
+                    <Label Grid.Row="3" Grid.Column="4" Text="{Binding KilosForCatsPerDay, Mode=OneWay}" />
+                    <Label Grid.Row="4" Grid.Column="0" Text="Цена корма за упаковку" />
+                    <Editor Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding PricePerBagOfFood}" />
+                    <Label Grid.Row="5" Grid.Column="0" Text="Вес упаковки" />
+                    <Editor Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding KilosInBagOfFood}" />
+                    <Label Grid.Row="6" Grid.Column="0" Text="Цена корма за килограмм" />
+                    <Editor Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding   PricePerKiloOfFood}" />
+
+                    <Label Grid.Row="7" Grid.Column="0" Text="Цена в день на одного" />
+                    <Label Grid.Row="7" Grid.Column="1" Text="{Binding MoneyForFemalePerDay}" />
+                    <Label Grid.Row="7" Grid.Column="2" Text="{Binding MoneyForMalePerDay}" />
+                    <Label Grid.Row="7" Grid.Column="3" Text="{Binding MoneyForKittenPerDay}" />
+                    <Label Grid.Row="7" Grid.Column="4" Text="{Binding MoneyForCatPerDay}" />
+
+                    <Label Grid.Row="8" Grid.Column="0" Text="Цена вакцин в месяц на одного" />
+                    <Editor Grid.Row="8" Grid.Column="1" Text="{Binding PricePerVaccination}" />
+
+                    <Label Grid.Row="9" Grid.Column="0" Text="Итого в месяц на одного" />
+                    <Label Grid.Row="9" Grid.Column="1" Text="{Binding MoneyForFemalePerMonth, Mode=OneWay}" />
+                    <Label Grid.Row="9" Grid.Column="2" Text="{Binding MoneyForMalePerMonth, Mode=OneWay}" />
+                    <Label Grid.Row="9" Grid.Column="3" Text="{Binding MoneyForKittenPerMonth, Mode=OneWay}" />
+                <Label Grid.Row="9" Grid.Column="4" Text="{Binding MoneyForCatPerMonth, Mode=OneWay}" />
+
+                    <Label Grid.Row="10" Grid.Column="0" Text="Итого в месяц на всех" />
+                    <Label Grid.Row="10" Grid.Column="1" Text="{Binding MoneyForFemalesPerMonth, Mode=OneWay}" />
+                    <Label Grid.Row="10" Grid.Column="2" Text="{Binding MoneyForMalesPerMonth, Mode=OneWay}" />
+                    <Label Grid.Row="10" Grid.Column="3" Text="{Binding MoneyForKittensPerMonth, Mode=OneWay}" />
+                    <Label Grid.Row="10" Grid.Column="4" Text="{Binding MoneyForCatsPerMonth, Mode=OneWay}" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Grid>
+        </StackLayout> 
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

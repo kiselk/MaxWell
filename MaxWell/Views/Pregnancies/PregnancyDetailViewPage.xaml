@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+          
+             xmlns:controls="clr-namespace:MaxWell.Controls"
+             x:Class="MaxWell.Views.Pregnancies.PregnancyDetailViewPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary"  Text="Сохранить" Clicked="ButtonClicked" />
+        <ToolbarItem Order="Primary"  Text="Удалить" Clicked="DeleteClicked" />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateTimeToLocalDateConverter x:Key="DateConverter" />
+            <converters:AgeConverter x:Key="AgeConverter" />
+            <converters:CatIdToNameConverter x:Key="CatIdToNameConverter" />
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+  
+        
+            <ScrollView>
+            <StackLayout Orientation="Vertical" Spacing="20" Padding="15" BackgroundColor="White">
+
+
+            <controls:ParentsDetailView BindingContext="{Binding}" />
+
+            <Label Text="Дата беременности" FontSize="Medium"/>
+            <DatePicker MinimumDate="01/01/2018"
+                        MaximumDate="12/31/2018"
+                        Date="{Binding Pregnancy.SexDate}"
+            />
+            <Label x:Name="age" Text="Давность" FontSize="Medium"/>
+            <Label  Text="{Binding  Pregnancy.SexDate, Converter={StaticResource AgeConverter},Mode=OneWay}"  />
+
+
+        </StackLayout>
+    </ScrollView>
+        
+</ContentPage>

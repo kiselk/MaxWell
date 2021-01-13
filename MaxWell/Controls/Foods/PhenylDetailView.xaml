@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="MaxWell.Controls.Foods.PhenylDetailView"
+             xmlns:controls="clr-namespace:MaxWell.Controls.Foods"
+             xmlns:prides="clr-namespace:MaxWell.Controls.Prides"
+             xmlns:comments="clr-namespace:MaxWell.Controls.Comments"
+
+             xmlns:cats="clr-namespace:MaxWell.Controls.Cats"
+             xmlns:xForms="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+             xmlns:controls1="clr-namespace:MaxWell.Controls"
+             xmlns:common="clr-namespace:MaxWell.Controls.Common">
+    <ContentView.Resources>
+       
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout BackgroundColor="Transparent" Orientation="Vertical" Spacing="20" Padding="15"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All">
+
+            <!-- <ScrollView x:Name="pageScrollView" HorizontalOptions="FillAndExpand">
+      RowSpacing="10" ColumnSpacing="10" <abstractions:CircleImage x:Name="selectedImage" Grid.Row="0"  Grid.Column="0" WidthRequest="128" HeightRequest="128" Source="{Binding Food.ImageAsImageStream}" Aspect="AspectFill"/>-->
+            <!--<Label  Grid.Column="0" Grid.Row="0" TextColor="White" Text="Название:" FontSize="Small" />-->
+            <!--        <StackLayout BackgroundColor="Black" Padding="1"  HorizontalOptions="Fill" VerticalOptions="Fill">
+                                    <StackLayout  Grid.Column="1" Grid.Row="0" BackgroundColor="White"  HorizontalOptions="Fill" VerticalOptions="Fill">
+                                  
+                                      <Editor  Unfocused="LostFocus" Focused="OnFocus" TextChanged="OnTextChanged"  TextColor="White" BackgroundColor="Black" x:Name="editorForName" Text="{Binding Food.Name}"  HorizontalOptions="FillAndExpand" >
+                                            <Editor.Keyboard>
+                                                <Keyboard x:FactoryMethod="Create">
+                                                    <x:Arguments>
+                                                        <KeyboardFlags>None</KeyboardFlags>
+                                                    </x:Arguments>
+                                                </Keyboard>
+                                            </Editor.Keyboard>
+                                        </Editor> </StackLayout>
+                                    <Label x:Name="InfoCount" TextColor="White" BackgroundColor="Black"></Label>    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                          </StackLayout>  </StackLayout>   <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+             -->
+
+
+            <ListView x:Name="InfoList" VerticalOptions="FillAndExpand" HasUnevenRows="True"
+                      HorizontalOptions="FillAndExpand"
+                      BackgroundColor="Transparent" Margin="2" 
+                      SeparatorVisibility="None" ItemSelected="OnItemSelected"
+                      AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                      AbsoluteLayout.LayoutFlags="All" CachingStrategy="RecycleElement">
+        <!--        <ListView.Header>
+                    <Grid Margin="10" Grid.Row="1" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+
+                        <Entry Grid.Column="1" Grid.Row="0" Placeholder="Название продукта..." PlaceholderColor="White"
+                               Unfocused="LostFocus" Focused="OnFocus" TextChanged="OnTextChanged" TextColor="White"
+                               BackgroundColor="Black" x:Name="editorForNameEntry" Text="{Binding Food.Name}"
+                               HorizontalOptions="FillAndExpand">
+                            <Entry.Keyboard>
+                                <Keyboard x:FactoryMethod="Create">
+                                    <x:Arguments>
+                                        <KeyboardFlags>None</KeyboardFlags>
+                                    </x:Arguments>
+                                </Keyboard>
+                            </Entry.Keyboard>
+                        </Entry>
+
+                        <Button Clicked="OnSearchClicked" Grid.Column="2" Grid.Row="0" Text="Поиск" BorderColor="White"
+                                BackgroundColor="Black" TextColor="White" />
+                    </Grid>
+                </ListView.Header>-->
+                <ListView.Header>
+                    <Grid Margin="10" Grid.Row="1" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+
+                        <Entry Grid.Column="1" Grid.Row="0" Placeholder="Введите название продукта..." PlaceholderColor="Gray"
+                               Unfocused="LostFocus" Focused="OnFocus" TextChanged="OnTextChanged" TextColor="White" 
+                               BackgroundColor="Transparent" x:Name="editorForNameEntry" Text="{Binding Food.Name}"
+                               HorizontalOptions="FillAndExpand">
+                           
+                        </Entry>
+
+                        <common:TransparentButton Clicked="OnSearchClicked" Grid.Column="2" Grid.Row="0" Text="Поиск"/>
+                       </Grid>   
+                  <!--  <Label TextColor="White" IsVisible="True" x:Name="ContainsLabel" Text="100 г. содержит фенилаланина (г.):" /> -->
+                
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="65" />
+
+                                </Grid.ColumnDefinitions>
+                              <common:TransparentLabel Grid.Column="0" Grid.Row="0" Text="{Binding Name}" />
+                              <common:TransparentLabel Grid.Column="0" Grid.Row="1" Text="{Binding NameEn}" />
+                                <common:TransparentLabel Grid.Column="1" Grid.RowSpan="2" Text="{Binding Phenyl, StringFormat='{0:F3} г. (g.) '}" />
+
+                            </Grid>
+
+               
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!--       <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label TextColor="White" Text="Описание:" FontSize="Small" />
+                            <Editor TextColor="White" BackgroundColor="Black" Text="{Binding Food.Description}" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                   
+                       <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label TextColor="White" Text="Автор:" FontSize="Small" />
+                            <Editor TextColor="White" BackgroundColor="Black" Text="{Binding Food.VKUserId}" HorizontalOptions="FillAndExpand" />
+                         </StackLayout>
+</StackLayout>
+      
+
+
+            </StackLayout>
+        </ScrollView>      -->
+
+
+        </StackLayout>
+
+
+    </ContentView.Content>
+</ContentView>

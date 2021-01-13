@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:common="clr-namespace:MaxWell.Controls.Common"
+			 x:Class="MaxWell.Views.Todo.TodoItemPage" 
+           
+			 Title="Дела">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Icon="ic_save"  Clicked="OnSaveActivated" />
+        <ToolbarItem Order="Primary"  Icon="ic_delete" Clicked="OnDeleteActivated" />
+        <ToolbarItem Order="Primary" Icon="ic_photo" Clicked="AddPhoto_Clicked" /> 
+
+    </ContentPage.ToolbarItems>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="bg_23"   HorizontalOptions="Fill" Aspect="AspectFill"/>
+        <StackLayout Margin="20" VerticalOptions="StartAndExpand" BackgroundColor="Transparent">
+            <Image x:Name="selectedImage" Source="{Binding Path=ImageAsImageStream}" HeightRequest="200"
+                   HorizontalOptions="Fill" Aspect="AspectFill" />
+          
+            <common:TransparentEntry x:Name="nameEntry" Text="{Binding Path=Name}" Placeholder="Название"  />
+          
+            <common:TransparentEntry x:Name="notesEntry" Text="{Binding Path=Notes}" Placeholder="Комментарий"/>
+           <StackLayout Orientation="Horizontal">
+            <Label Text="Сделано" TextColor="White"/>
+            <Switch x:Name="doneSwitch" BackgroundColor="Transparent" IsToggled="{Binding Path=Done}" />
+          </StackLayout>
+            <!--<Button Text="Голос" Clicked="OnSpeakActivated" /> -->
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

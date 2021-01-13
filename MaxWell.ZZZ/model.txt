@@ -1,0 +1,9 @@
+pomet
+cat
+person
+vyazka
+
+Person (userId, 123*Meals)
+Meal (userId,  123*Receipe*amount, date) Прием пищи. Имя Обед - много блюд  (Pomet Dish+\Pregnancy*Count )
+Dish (userId, Receipe*Amount)  Блюдо. Имя Тарелка Супа -  часть рецепта (Pregnancy Recepiepe+\Vyzkas*Count
+Receipe  (Id, 123*FoodDescId*Amount) Рецепт. Рыбный суп - много Ингридиентов. (vyazka Foods+\cats*count

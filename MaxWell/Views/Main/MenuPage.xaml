@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prides="clr-namespace:MaxWell.Views.Prides"
+             xmlns:comments="clr-namespace:MaxWell.Views.Comments"
+             xmlns:cats="clr-namespace:MaxWell.Views.Cats"
+             xmlns:vyazki="clr-namespace:MaxWell.Views.Vyazki"
+             xmlns:pregnancies="clr-namespace:MaxWell.Views.Pregnancies"
+             xmlns:pomets="clr-namespace:MaxWell.Views.Pomets"
+             xmlns:prides1="clr-namespace:MaxWell.Controls.Prides"
+             xmlns:pages="clr-namespace:MaxWell.Controls.Pages"
+             xmlns:pages1="clr-namespace:MaxWell.ViewModels.Pages"
+             xmlns:xamarinForms="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms"
+             x:Class="MaxWell.Views.Main.MenuPage" 
+             xamarinForms:BottomBarPageExtensions.TabColor="Black">
+     <ContentPage.BindingContext>
+            <pages1:PageListViewModel />
+        </ContentPage.BindingContext> 
+    <ContentPage.Content>
+     
+       
+                <StackLayout >
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <!--   <StackLayout BackgroundColor="Black" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">  </StackLayout>
+       <Image Source="MainCat"  VerticalOptions="End" Aspect="AspectFit"/> -->
+                <Image Source="bg_17" HorizontalOptions="Fill" Aspect="AspectFill"/>
+
+                        <ListView BackgroundColor="Transparent"   ItemsSource="{Binding PageModelList}" ItemSelected="OnItemSelected" SeparatorColor="White" Footer="">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <pages:PageView BindingContext="{Binding}" />
+
+
+
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </StackLayout >
+             
+    </ContentPage.Content>
+</ContentPage>

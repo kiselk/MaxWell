@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{DA6C6EAF-8381-4126-9FEB-24C9CEB7EC2B}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MaxWell.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\AccountConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\AnalyticsConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\AutomationIdConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\LoadImageButtonTextConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\ColorConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Allergen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Cat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Comment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FoodInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Foods\Plans\Dish.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Foods\FoodDescription.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Foods\Plans\Ingredient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Foods\Plans\Meal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Foods\NutritionDefinition.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Foods\NutritionData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Foods\FoodGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Foods\FoodWeight.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Foods\Plans\Plan.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Foods\Plans\Recipe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ImageList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\New\Vladelec.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\New\Zavodchik.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Food.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Person.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Pomet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Pregnancy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Pride.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\RegisterBindingModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\RemoteImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TodoItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Vyazka.cs" />
+  </ItemGroup>
+</Project>

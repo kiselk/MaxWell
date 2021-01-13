@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+
+             xmlns:common="clr-namespace:MaxWell.Controls.Common"
+             x:Class="MaxWell.Controls.Meals.MealDetailView"
+             >
+    <ContentView.Resources>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout BackgroundColor="Transparent" Orientation="Vertical" Spacing="20" Padding="15"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All">
+            <Grid RowSpacing="5" ColumnSpacing="0" Margin="10,10" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <forms:CachedImage x:Name="selectedImage" Source="{Binding Meal.ImageUrl}" HeightRequest="200"
+                               HorizontalOptions="Fill" Aspect="AspectFill" />
+                <StackLayout>
+                    <common:TransparentEntry PlaceholderColor="White" TextColor="White" Placeholder="Название" x:Name="MealNameLabel" Text="{Binding Meal.Name}" FontSize="25"/>
+                        <common:TransparentEntry PlaceholderColor="White" TextColor="White" Placeholder="Описание" x:Name="MealDescriptionLabel" Text="{Binding Meal.Description}" FontSize="25"/>
+                        <common:TransparentEntry PlaceholderColor="White" TextColor="White" Placeholder="Пользователь" x:Name="MealPersonIdLabel" Text="{Binding Meal.PersonId}" FontSize="25"/>
+                        <common:TransparentEntry PlaceholderColor="White" TextColor="White" Placeholder="Картинка" x:Name="MealImageUrlLabel" Text="{Binding Meal.ImageUrl}" FontSize="25"/>
+                        <Label TextColor="White" x:Name="MealCreateDateTimeLabel" Text="{Binding Meal.CreateDateTime}" FontSize="25"/>
+        </StackLayout>
+        </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

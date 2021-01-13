@@ -1,0 +1,278 @@
+2018-12-17 18:46:14.252 +00:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 DELETE http://maxwellwebapp.azurewebsites.net/api/personsdb/1  0
+2018-12-17 18:46:14.254 +00:00 [Debug] Microsoft.AspNetCore.Routing.Tree.TreeRouter: Request successfully matched the route with name '(null)' and template 'api/PersonsDb/{id}'.
+2018-12-17 18:46:14.326 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Route matched with {action = "Delete", controller = "PersonsDb"}. Executing action MaxWell.Server.Controllers.PersonsDbController.Delete (MaxWell.Server)
+2018-12-17 18:46:14.326 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of authorization filters (in the following order): None
+2018-12-17 18:46:14.326 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter
+2018-12-17 18:46:14.326 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648), Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter
+2018-12-17 18:46:14.327 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of exception filters (in the following order): None
+2018-12-17 18:46:14.327 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter
+2018-12-17 18:46:14.334 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:14.335 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:14.343 +00:00 [Debug] Microsoft.EntityFrameworkCore.Infrastructure: An 'IServiceProvider' was created for internal use by Entity Framework.
+2018-12-17 18:46:14.356 +00:00 [Debug] Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder: Attempting to bind parameter 'id' of type 'System.String' ...
+2018-12-17 18:46:14.356 +00:00 [Debug] Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder: Attempting to bind model of type 'System.String' using the name 'id' in request data ...
+2018-12-17 18:46:14.362 +00:00 [Debug] Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder: Done attempting to bind model of type 'System.String' using the name 'id'.
+2018-12-17 18:46:14.362 +00:00 [Debug] Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder: Done attempting to bind parameter 'id' of type 'System.String'.
+2018-12-17 18:46:14.374 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2018-12-17 18:46:14.382 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:46:14.382 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:46:14.384 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method MaxWell.Server.Controllers.PersonsDbController.Delete (MaxWell.Server) with arguments (1) - Validation state: Valid
+2018-12-17 18:46:14.412 +00:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.1.4-rtm-31024 initialized 'MyDatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-12-17 18:46:14.454 +00:00 [Debug] Microsoft.EntityFrameworkCore.Query: Compiling query model: 
+'(from Person m in DbSet<Person>
+where [m].Id == __idString_0
+select [m]).SingleOrDefault()'
+2018-12-17 18:46:14.472 +00:00 [Debug] Microsoft.EntityFrameworkCore.Query: Optimized query model: 
+'(from Person m in DbSet<Person>
+where [m].Id == __idString_0
+select [m]).SingleOrDefault()'
+2018-12-17 18:46:14.562 +00:00 [Debug] Microsoft.EntityFrameworkCore.Query: (QueryContext queryContext) => IAsyncEnumerable<Person> _InterceptExceptions(
+    source: IAsyncEnumerable<Person> _TrackEntities(
+        results: IAsyncEnumerable<Person> _ToSequence(() => Task<Person> SingleOrDefault(
+                source: IAsyncEnumerable<Person> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(2) [m].[Id], [m].[Birthday], [m].[Description], [m].[Name], [m].[icon], [m].[image]
+                        FROM [Person] AS [m]
+                        WHERE [m].[Id] = @__idString_0, 
+                    shaper: UnbufferedEntityShaper<Person>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Person }, 
+        entityAccessors: List<Func<Person, object>> 
+        { 
+            Func<Person, Person>, 
+        }
+    ), 
+    contextType: MaxWell.Server.Data.MyDatabaseContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)
+2018-12-17 18:46:14.594 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Connection: Opening connection to database 'coreDB' on server 'tcp:maxwellsql.database.windows.net,1433'.
+2018-12-17 18:46:14.594 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Connection: Opened connection to database 'coreDB' on server 'tcp:maxwellsql.database.windows.net,1433'.
+2018-12-17 18:46:14.652 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__idString_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[Birthday], [m].[Description], [m].[Name], [m].[icon], [m].[image]
+FROM [Person] AS [m]
+WHERE [m].[Id] = @__idString_0
+2018-12-17 18:46:14.674 +00:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (22ms) [Parameters=[@__idString_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[Birthday], [m].[Description], [m].[Name], [m].[icon], [m].[image]
+FROM [Person] AS [m]
+WHERE [m].[Id] = @__idString_0
+2018-12-17 18:46:14.771 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Command: A data reader was disposed.
+2018-12-17 18:46:14.771 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Connection: Closing connection to database 'coreDB' on server 'tcp:maxwellsql.database.windows.net,1433'.
+2018-12-17 18:46:14.771 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Connection: Closed connection to database 'coreDB' on server 'tcp:maxwellsql.database.windows.net,1433'.
+2018-12-17 18:46:14.781 +00:00 [Debug] Microsoft.EntityFrameworkCore.ChangeTracking: Context 'Person' started tracking 'MyDatabaseContext' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2018-12-17 18:46:14.817 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action method MaxWell.Server.Controllers.PersonsDbController.Delete (MaxWell.Server), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 431.3588ms.
+2018-12-17 18:46:14.825 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:46:14.825 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:46:14.827 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2018-12-17 18:46:14.835 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:14.835 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:14.838 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2018-12-17 18:46:14.844 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter
+2018-12-17 18:46:14.846 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: No information found on request to perform content negotiation.
+2018-12-17 18:46:14.846 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2018-12-17 18:46:14.846 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Attempting to select the first formatter in the output formatters list which can write the result.
+2018-12-17 18:46:14.847 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2018-12-17 18:46:14.847 +00:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'MaxWell.Models.Person'.
+2018-12-17 18:46:14.947 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2018-12-17 18:46:14.947 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:14.947 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:14.954 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: Before executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:14.954 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: After executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:14.955 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action MaxWell.Server.Controllers.PersonsDbController.Delete (MaxWell.Server) in 627.9056ms
+2018-12-17 18:46:14.964 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel: Connection id "0HLJ49VICTMJ4" completed keep alive response.
+2018-12-17 18:46:14.966 +00:00 [Debug] Microsoft.EntityFrameworkCore.Infrastructure: 'MyDatabaseContext' disposed.
+2018-12-17 18:46:14.972 +00:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 720.1111ms 200 application/json; charset=utf-8
+2018-12-17 18:46:17.063 +00:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 GET http://maxwellwebapp.azurewebsites.net/api/personsdb/  
+2018-12-17 18:46:17.063 +00:00 [Debug] Microsoft.AspNetCore.Routing.Tree.TreeRouter: Request successfully matched the route with name '(null)' and template 'api/PersonsDb'.
+2018-12-17 18:46:17.063 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ActionSelector: Action 'MaxWell.Server.Controllers.PersonsDbController.CreateFromBody (MaxWell.Server)' with id '1295c359-9cb2-4338-97ee-658b1a488bd9' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2018-12-17 18:46:17.063 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ActionSelector: Action 'MaxWell.Server.Controllers.PersonsDbController.EditFromBody (MaxWell.Server)' with id '8c1d8c95-2b50-4652-9341-54467d552dcd' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2018-12-17 18:46:17.064 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Route matched with {action = "List", controller = "PersonsDb"}. Executing action MaxWell.Server.Controllers.PersonsDbController.List (MaxWell.Server)
+2018-12-17 18:46:17.064 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of authorization filters (in the following order): None
+2018-12-17 18:46:17.064 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter
+2018-12-17 18:46:17.064 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648), Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter
+2018-12-17 18:46:17.064 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of exception filters (in the following order): None
+2018-12-17 18:46:17.064 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter
+2018-12-17 18:46:17.064 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:17.065 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:17.065 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2018-12-17 18:46:17.065 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:46:17.065 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:46:17.066 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method MaxWell.Server.Controllers.PersonsDbController.List (MaxWell.Server) - Validation state: Valid
+2018-12-17 18:46:17.071 +00:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.1.4-rtm-31024 initialized 'MyDatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-12-17 18:46:17.072 +00:00 [Debug] Microsoft.EntityFrameworkCore.Query: Compiling query model: 
+'from Person <generated>_0 in DbSet<Person>
+select [<generated>_0]'
+2018-12-17 18:46:17.073 +00:00 [Debug] Microsoft.EntityFrameworkCore.Query: Optimized query model: 
+'from Person <generated>_0 in DbSet<Person>
+select [<generated>_0]'
+2018-12-17 18:46:17.084 +00:00 [Debug] Microsoft.EntityFrameworkCore.Query: (QueryContext queryContext) => IEnumerable<Person> _InterceptExceptions(
+    source: IEnumerable<Person> _TrackEntities(
+        results: IEnumerable<Person> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [p].[Id], [p].[Birthday], [p].[Description], [p].[Name], [p].[icon], [p].[image]
+                FROM [Person] AS [p], 
+            shaper: UnbufferedEntityShaper<Person>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Person }, 
+        entityAccessors: List<Func<Person, object>> 
+        { 
+            Func<Person, Person>, 
+        }
+    ), 
+    contextType: MaxWell.Server.Data.MyDatabaseContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)
+2018-12-17 18:46:17.091 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Connection: Opening connection to database 'coreDB' on server 'tcp:maxwellsql.database.windows.net,1433'.
+2018-12-17 18:46:17.091 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Connection: Opened connection to database 'coreDB' on server 'tcp:maxwellsql.database.windows.net,1433'.
+2018-12-17 18:46:17.091 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[Birthday], [p].[Description], [p].[Name], [p].[icon], [p].[image]
+FROM [Person] AS [p]
+2018-12-17 18:46:17.095 +00:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[Birthday], [p].[Description], [p].[Name], [p].[icon], [p].[image]
+FROM [Person] AS [p]
+2018-12-17 18:46:17.096 +00:00 [Debug] Microsoft.EntityFrameworkCore.ChangeTracking: Context 'Person' started tracking 'MyDatabaseContext' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2018-12-17 18:46:17.096 +00:00 [Debug] Microsoft.EntityFrameworkCore.ChangeTracking: Context 'Person' started tracking 'MyDatabaseContext' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2018-12-17 18:46:17.096 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Command: A data reader was disposed.
+2018-12-17 18:46:17.096 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Connection: Closing connection to database 'coreDB' on server 'tcp:maxwellsql.database.windows.net,1433'.
+2018-12-17 18:46:17.096 +00:00 [Debug] Microsoft.EntityFrameworkCore.Database.Connection: Closed connection to database 'coreDB' on server 'tcp:maxwellsql.database.windows.net,1433'.
+2018-12-17 18:46:17.097 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action method MaxWell.Server.Controllers.PersonsDbController.List (MaxWell.Server), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 30.2157ms.
+2018-12-17 18:46:17.097 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:46:17.097 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:46:17.097 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2018-12-17 18:46:17.097 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:17.097 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:17.097 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2018-12-17 18:46:17.097 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter
+2018-12-17 18:46:17.097 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: No information found on request to perform content negotiation.
+2018-12-17 18:46:17.097 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2018-12-17 18:46:17.097 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Attempting to select the first formatter in the output formatters list which can write the result.
+2018-12-17 18:46:17.097 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2018-12-17 18:46:17.097 +00:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MaxWell.Models.Person, MaxWell.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-12-17 18:46:17.101 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2018-12-17 18:46:17.101 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:17.101 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:17.101 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: Before executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:17.101 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: After executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:46:17.101 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action MaxWell.Server.Controllers.PersonsDbController.List (MaxWell.Server) in 36.897ms
+2018-12-17 18:46:17.101 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel: Connection id "0HLJ49VICTMJ4" completed keep alive response.
+2018-12-17 18:46:17.102 +00:00 [Debug] Microsoft.EntityFrameworkCore.Infrastructure: 'MyDatabaseContext' disposed.
+2018-12-17 18:46:17.102 +00:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 38.9778ms 200 application/json; charset=utf-8
+2018-12-17 18:47:17.906 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets: Connection id "0HLJ49VICTMJ4" received FIN.
+2018-12-17 18:47:17.906 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel: Connection id "0HLJ49VICTMJ5" started.
+2018-12-17 18:47:17.906 +00:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 GET http://maxwellwebapp.azurewebsites.net/api/todoitems/  
+2018-12-17 18:47:17.906 +00:00 [Debug] Microsoft.AspNetCore.Routing.Tree.TreeRouter: Request successfully matched the route with name '(null)' and template 'api/ToDoItems'.
+2018-12-17 18:47:17.906 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ActionSelector: Action 'MaxWell.Server.Controllers.ToDoItemsController.Create (MaxWell.Server)' with id '3e9d3384-71d4-49d1-8233-c83a41b845b3' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2018-12-17 18:47:17.907 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ActionSelector: Action 'MaxWell.Server.Controllers.ToDoItemsController.Edit (MaxWell.Server)' with id '8d580138-382c-4ac0-b97e-8c090d7526d6' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2018-12-17 18:47:17.907 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel: Connection id "0HLJ49VICTMJ4" disconnecting.
+2018-12-17 18:47:17.908 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Route matched with {action = "List", controller = "ToDoItems"}. Executing action MaxWell.Server.Controllers.ToDoItemsController.List (MaxWell.Server)
+2018-12-17 18:47:17.908 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of authorization filters (in the following order): None
+2018-12-17 18:47:17.908 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter
+2018-12-17 18:47:17.908 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648), Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter
+2018-12-17 18:47:17.908 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of exception filters (in the following order): None
+2018-12-17 18:47:17.908 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter
+2018-12-17 18:47:17.908 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:17.908 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:17.909 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets: Connection id "0HLJ49VICTMJ4" sending FIN.
+2018-12-17 18:47:17.909 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel: Connection id "0HLJ49VICTMJ4" stopped.
+2018-12-17 18:47:17.914 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2018-12-17 18:47:17.914 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:17.914 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:17.914 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method MaxWell.Server.Controllers.ToDoItemsController.List (MaxWell.Server) - Validation state: Valid
+2018-12-17 18:47:17.915 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action method MaxWell.Server.Controllers.ToDoItemsController.List (MaxWell.Server), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.0913ms.
+2018-12-17 18:47:17.915 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:17.915 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:17.915 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2018-12-17 18:47:17.915 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:17.915 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:17.915 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2018-12-17 18:47:17.915 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter
+2018-12-17 18:47:17.915 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: No information found on request to perform content negotiation.
+2018-12-17 18:47:17.915 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2018-12-17 18:47:17.915 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Attempting to select the first formatter in the output formatters list which can write the result.
+2018-12-17 18:47:17.915 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2018-12-17 18:47:17.915 +00:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MaxWell.Server.Models.ToDoItem, MaxWell.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-12-17 18:47:17.918 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2018-12-17 18:47:17.918 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:17.918 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:17.918 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: Before executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:17.918 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: After executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:17.918 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action MaxWell.Server.Controllers.ToDoItemsController.List (MaxWell.Server) in 9.4409ms
+2018-12-17 18:47:17.918 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel: Connection id "0HLJ49VICTMJ5" completed keep alive response.
+2018-12-17 18:47:17.918 +00:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 11.4708ms 200 application/json; charset=utf-8
+2018-12-17 18:47:20.786 +00:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 DELETE http://maxwellwebapp.azurewebsites.net/api/todoitems/b94afb54-a1cb-4313-8af3-b7511551b33b  0
+2018-12-17 18:47:20.786 +00:00 [Debug] Microsoft.AspNetCore.Routing.Tree.TreeRouter: Request successfully matched the route with name '(null)' and template 'api/ToDoItems/{id}'.
+2018-12-17 18:47:20.788 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Route matched with {action = "Delete", controller = "ToDoItems"}. Executing action MaxWell.Server.Controllers.ToDoItemsController.Delete (MaxWell.Server)
+2018-12-17 18:47:20.788 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of authorization filters (in the following order): None
+2018-12-17 18:47:20.788 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter
+2018-12-17 18:47:20.788 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648), Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter
+2018-12-17 18:47:20.788 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of exception filters (in the following order): None
+2018-12-17 18:47:20.788 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter
+2018-12-17 18:47:20.788 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:20.788 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:20.788 +00:00 [Debug] Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder: Attempting to bind parameter 'id' of type 'System.String' ...
+2018-12-17 18:47:20.788 +00:00 [Debug] Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder: Attempting to bind model of type 'System.String' using the name 'id' in request data ...
+2018-12-17 18:47:20.788 +00:00 [Debug] Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder: Done attempting to bind model of type 'System.String' using the name 'id'.
+2018-12-17 18:47:20.788 +00:00 [Debug] Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder: Done attempting to bind parameter 'id' of type 'System.String'.
+2018-12-17 18:47:20.788 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2018-12-17 18:47:20.793 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:20.793 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:20.793 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method MaxWell.Server.Controllers.ToDoItemsController.Delete (MaxWell.Server) with arguments (b94afb54-a1cb-4313-8af3-b7511551b33b) - Validation state: Valid
+2018-12-17 18:47:20.795 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action method MaxWell.Server.Controllers.ToDoItemsController.Delete (MaxWell.Server), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 1.2912ms.
+2018-12-17 18:47:20.795 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:20.795 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:20.795 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2018-12-17 18:47:20.795 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:20.795 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:20.795 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Before executing action result Microsoft.AspNetCore.Mvc.NoContentResult.
+2018-12-17 18:47:20.796 +00:00 [Information] Microsoft.AspNetCore.Mvc.StatusCodeResult: Executing HttpStatusCodeResult, setting HTTP status code 204
+2018-12-17 18:47:20.796 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: After executing action result Microsoft.AspNetCore.Mvc.NoContentResult.
+2018-12-17 18:47:20.796 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:20.796 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:20.796 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: Before executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:20.796 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: After executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:20.796 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action MaxWell.Server.Controllers.ToDoItemsController.Delete (MaxWell.Server) in 8.2756ms
+2018-12-17 18:47:20.796 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel: Connection id "0HLJ49VICTMJ5" completed keep alive response.
+2018-12-17 18:47:20.796 +00:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 10.2681ms 204 
+2018-12-17 18:47:21.452 +00:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 GET http://maxwellwebapp.azurewebsites.net/api/todoitems/  
+2018-12-17 18:47:21.452 +00:00 [Debug] Microsoft.AspNetCore.Routing.Tree.TreeRouter: Request successfully matched the route with name '(null)' and template 'api/ToDoItems'.
+2018-12-17 18:47:21.452 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ActionSelector: Action 'MaxWell.Server.Controllers.ToDoItemsController.Create (MaxWell.Server)' with id '3e9d3384-71d4-49d1-8233-c83a41b845b3' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2018-12-17 18:47:21.452 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ActionSelector: Action 'MaxWell.Server.Controllers.ToDoItemsController.Edit (MaxWell.Server)' with id '8d580138-382c-4ac0-b97e-8c090d7526d6' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2018-12-17 18:47:21.452 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Route matched with {action = "List", controller = "ToDoItems"}. Executing action MaxWell.Server.Controllers.ToDoItemsController.List (MaxWell.Server)
+2018-12-17 18:47:21.452 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of authorization filters (in the following order): None
+2018-12-17 18:47:21.452 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter
+2018-12-17 18:47:21.452 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648), Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter
+2018-12-17 18:47:21.452 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of exception filters (in the following order): None
+2018-12-17 18:47:21.452 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter
+2018-12-17 18:47:21.452 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:21.452 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:21.452 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:21.453 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method MaxWell.Server.Controllers.ToDoItemsController.List (MaxWell.Server) - Validation state: Valid
+2018-12-17 18:47:21.453 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action method MaxWell.Server.Controllers.ToDoItemsController.List (MaxWell.Server), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.0153ms.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Action Filter: After executing OnActionExecutionAsync on filter Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2018-12-17 18:47:21.453 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter
+2018-12-17 18:47:21.453 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: No information found on request to perform content negotiation.
+2018-12-17 18:47:21.453 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2018-12-17 18:47:21.453 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Attempting to select the first formatter in the output formatters list which can write the result.
+2018-12-17 18:47:21.453 +00:00 [Debug] Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector: Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2018-12-17 18:47:21.453 +00:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MaxWell.Server.Models.ToDoItem, MaxWell.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: Before executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:21.453 +00:00 [Trace] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Resource Filter: After executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter.
+2018-12-17 18:47:21.453 +00:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action MaxWell.Server.Controllers.ToDoItemsController.List (MaxWell.Server) in 0.6316ms
+2018-12-17 18:47:21.453 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel: Connection id "0HLJ49VICTMJ5" completed keep alive response.
+2018-12-17 18:47:21.453 +00:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 1.1638ms 200 application/json; charset=utf-8
+2018-12-17 18:49:22.815 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets: Connection id "0HLJ49VICTMJ5" received FIN.
+2018-12-17 18:49:22.816 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel: Connection id "0HLJ49VICTMJ5" disconnecting.
+2018-12-17 18:49:22.816 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets: Connection id "0HLJ49VICTMJ5" sending FIN.
+2018-12-17 18:49:22.816 +00:00 [Debug] Microsoft.AspNetCore.Server.Kestrel: Connection id "0HLJ49VICTMJ5" stopped.

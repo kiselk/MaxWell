@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ko" original="MAXWELL/RESOURCES/APPRESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6900.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="MAXWELL/RESOURCES/APPRESOURCES.RESX" datatype="resx">
+        <trans-unit id="About" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">에 대 한</target>
+        </trans-unit>
+        <trans-unit id="AddPhoto" translate="yes" xml:space="preserve">
+          <source>Add Photo</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">사진 추가</target>
+        </trans-unit>
+        <trans-unit id="Allergens" translate="yes" xml:space="preserve">
+          <source>Allergens</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">알레르기 증상</target>
+        </trans-unit>
+        <trans-unit id="Cancel" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">취소</target>
+        </trans-unit>
+        <trans-unit id="Cookoo" translate="yes" xml:space="preserve">
+          <source>Cookoo</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cookoo</target>
+        </trans-unit>
+        <trans-unit id="Create" translate="yes" xml:space="preserve">
+          <source>Create</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">만들기</target>
+        </trans-unit>
+        <trans-unit id="Dishes" translate="yes" xml:space="preserve">
+          <source>Dishes</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">요리</target>
+        </trans-unit>
+        <trans-unit id="Edit" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">편집</target>
+        </trans-unit>
+        <trans-unit id="Food" translate="yes" xml:space="preserve">
+          <source>Food</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">식품업</target>
+        </trans-unit>
+        <trans-unit id="Gallery" translate="yes" xml:space="preserve">
+          <source>Gallery</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">갤러리</target>
+        </trans-unit>
+        <trans-unit id="Hello" translate="yes" xml:space="preserve">
+          <source>Hello</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">안녕하세요</target>
+        </trans-unit>
+        <trans-unit id="Ingredients" translate="yes" xml:space="preserve">
+          <source>Ingredients</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">재료</target>
+        </trans-unit>
+        <trans-unit id="Loading" translate="yes" xml:space="preserve">
+          <source>Loading</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">잠시만 기다려 주세요.</target>
+        </trans-unit>
+        <trans-unit id="Login" translate="yes" xml:space="preserve">
+          <source>Login</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">로그인</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Comment</note>
+        </trans-unit>
+        <trans-unit id="Meals" translate="yes" xml:space="preserve">
+          <source>Meals</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">식사</target>
+        </trans-unit>
+        <trans-unit id="Menu" translate="yes" xml:space="preserve">
+          <source>Menu</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">메뉴</target>
+        </trans-unit>
+        <trans-unit id="NotLoggedIn" translate="yes" xml:space="preserve">
+          <source>User is not Logged In</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">사용자가 로그인에</target>
+        </trans-unit>
+        <trans-unit id="People" translate="yes" xml:space="preserve">
+          <source>People</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">사람들</target>
+        </trans-unit>
+        <trans-unit id="Phenyl" translate="yes" xml:space="preserve">
+          <source>Phenylalanine TOP</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">페닐알라닌 상단</target>
+        </trans-unit>
+        <trans-unit id="Photo" translate="yes" xml:space="preserve">
+          <source>Photo</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">사진</target>
+        </trans-unit>
+        <trans-unit id="Profile" translate="yes" xml:space="preserve">
+          <source>Profile</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">프로 파일</target>
+        </trans-unit>
+        <trans-unit id="Rations" translate="yes" xml:space="preserve">
+          <source>Rations</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">식량</target>
+        </trans-unit>
+        <trans-unit id="Recipes" translate="yes" xml:space="preserve">
+          <source>Recipes</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">조리법</target>
+        </trans-unit>
+        <trans-unit id="Todo" translate="yes" xml:space="preserve">
+          <source>ToDo</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ToDo</target>
+        </trans-unit>
+        <trans-unit id="Top" translate="yes" xml:space="preserve">
+          <source>Top</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">위</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

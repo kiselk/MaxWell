@@ -1,0 +1,151 @@
+﻿Id,MeasurementEn,Measurement,Abbreviation,NameEn,Name,Unknown1,Unknown2
+203,g,г,PROCNT,Protein,Белки,2,600
+204,g,г,FAT,Total lipid (fat),Всего липидов (жира),2,800
+205,g,г,CHOCDF,"Carbohydrate, by difference","Углеводы, по разнице",2,1100
+207,g,г,ASH,Ash,Пепел,2,1000
+208,kcal,ккал,ENERC_KCAL,Energy,Энергия,0,300
+209,g,г,STARCH,Starch,Крахмал,2,2200
+210,g,г,SUCS,Sucrose,Сахароза,2,1600
+211,g,г,GLUS,Glucose (dextrose),Глюкоза (декстроза),2,1700
+212,g,г,FRUS,Fructose,Фруктоза,2,1800
+213,g,г,LACS,Lactose,лактоза,2,1900
+214,g,г,MALS,Maltose,мальтоза,2,2000
+221,g,г,ALC,"Alcohol, ethyl","Алкоголь, этил",1,18200
+255,g,г,WATER,Water,вода,2,100
+257,g,г,,Adjusted Protein,Скорректированный белок,2,700
+262,mg,мг,CAFFN,Caffeine,Кофеин,0,18300
+263,mg,мг,THEBRN,Theobromine,Теобромин,0,18400
+268,kJ,кДж,ENERC_KJ,Energy,энергии,0,400
+269,g,г,SUGAR,"Sugars, total","Сахаров, всего",2,1500
+287,g,г,GALS,Galactose,галактоза,2,2100
+291,g,г,FIBTG,"Fiber, total dietary","Клетчатка, общая диетическая",1,1200
+301,mg,мг,CA,"Calcium, Ca","Кальций, Ca",0,5300
+303,mg,мг,FE,"Iron, Fe","Железо, Fe",2,5400
+304,mg,мг,MG,"Magnesium, Mg","Магний, Mg",0,5500
+305,mg,мг,P,"Phosphorus, P","Фосфор, Р",0,5600
+306,mg,мг,K,"Potassium, K","Калий, К",0,5700
+307,mg,мг,NA,"Sodium, Na","Натрий, Na",0,5800
+309,mg,мг,ZN,"Zinc, Zn","Цинк, цинк",2,5900
+312,mg,мг,CU,"Copper, Cu","Медь, медь",3,6000
+313,пЅµg,нг,FLD,"Fluoride, F","Фтор, F",1,6240
+315,mg,мг,MN,"Manganese, Mn","Марганец, Мн",3,6100
+317,пЅµg,нг,SE,"Selenium, Se","Selenium, Se",1,6200
+318,IU,IU,VITA_IU,"Vitamin A, IU","Витамин А, МЕ",0,7500
+319,пЅµg,нг,RETOL,Retinol,ретинол,0,7430
+320,пЅµg,нг,VITA_RAE,"Vitamin A, RAE","Витамин А, РАЭ",0,7420
+321,пЅµg,нг,CARTB,"Carotene, beta","Каротин, бета",0,7440
+322,пЅµg,нг,CARTA,"Carotene, alpha","Каротин, альфа",0,7450
+323,mg,мг,TOCPHA,Vitamin E (alpha-tocopherol),Витамин Е (альфа-токоферол),2,7900
+324,IU,IU,VITD,Vitamin D,Витамин Д,0,8750
+325,пЅµg,нг,ERGCAL,Vitamin D2 (ergocalciferol),Витамин D2 (эргокальциферол),1,8710
+326,пЅµg,нг,CHOCAL,Vitamin D3 (cholecalciferol),Витамин D3 (холекальциферол),1,8720
+328,пЅµg,нг,VITD,Vitamin D (D2 + D3),Витамин D (D2 + D3),1,8700
+334,пЅµg,нг,CRYPX,"Cryptoxanthin, beta","Криптоксантин, бета",0,7460
+337,пЅµg,нг,LYCPN,Lycopene,Ликопен,0,7530
+338,пЅµg,нг,LUT+ZEA,Lutein + zeaxanthin,Лютеин + зеаксантин,0,7560
+341,mg,мг,TOCPHB,"Tocopherol, beta","Токоферол, бета",2,8000
+342,mg,мг,TOCPHG,"Tocopherol, gamma","Токоферол, гамма",2,8100
+343,mg,мг,TOCPHD,"Tocopherol, delta","Токоферол, дельта",2,8200
+344,mg,мг,TOCTRA,"Tocotrienol, alpha","Токотриенол, альфа",2,8300
+345,mg,мг,TOCTRB,"Tocotrienol, beta","Токотриенол, бета",2,8400
+346,mg,мг,TOCTRG,"Tocotrienol, gamma","Токотриенол, гамма",2,8500
+347,mg,мг,TOCTRD,"Tocotrienol, delta","Токотриенол, дельта",2,8600
+401,mg,мг,VITC,"Vitamin C, total ascorbic acid","Витамин С, общая аскорбиновая кислота",1,6300
+404,mg,мг,THIA,Thiamin,Тиамин,3,6400
+405,mg,мг,RIBF,Riboflavin,Рибофлавин,3,6500
+406,mg,мг,NIA,Niacin,Ниацин,3,6600
+410,mg,мг,PANTAC,Pantothenic acid,Пантотеновая кислота,3,6700
+415,mg,мг,VITB6A,Vitamin B-6,Витамин В-6,3,6800
+417,пЅµg,нг,FOL,"Folate, total","Фолат, всего",0,6900
+418,пЅµg,нг,VITB12,Vitamin B-12,Витамин В-12,2,7300
+421,mg,мг,CHOLN,"Choline, total","Холин, всего",1,7220
+428,пЅµg,нг,MK4,Menaquinone-4,Менахиноном-4,1,8950
+429,пЅµg,нг,VITK1D,Dihydrophylloquinone,Dihydrophylloquinone,1,8900
+430,пЅµg,нг,VITK1,Vitamin K (phylloquinone),Витамин К (филлохинон),1,8800
+431,пЅµg,нг,FOLAC,Folic acid,Фолиевая кислота,0,7000
+432,пЅµg,нг,FOLFD,"Folate, food","Фолат, еда",0,7100
+435,пЅµg,нг,FOLDFE,"Folate, DFE","Фолат, ДФЭ",0,7200
+454,mg,мг,BETN,Betaine,Бетаин,1,7270
+501,g,г,TRP_G,Tryptophan,Триптофан,3,16300
+502,g,г,THR_G,Threonine,Треонин,3,16400
+503,g,г,ILE_G,Isoleucine,изолейцин,3,16500
+504,g,г,LEU_G,Leucine,лейцин,3,16600
+505,g,г,LYS_G,Lysine,Лизин,3,16700
+506,g,г,MET_G,Methionine,метионин,3,16800
+507,g,г,CYS_G,Cystine,цистин,3,16900
+508,g,г,PHE_G,Phenylalanine,Фенилаланин,3,17000
+509,g,г,TYR_G,Tyrosine,Тирозин,3,17100
+510,g,г,VAL_G,Valine,валин,3,17200
+511,g,г,ARG_G,Arginine,Аргинин,3,17300
+512,g,г,HISTN_G,Histidine,Гистидин,3,17400
+513,g,г,ALA_G,Alanine,аланин,3,17500
+514,g,г,ASP_G,Aspartic acid,Аспарагиновая кислота,3,17600
+515,g,г,GLU_G,Glutamic acid,Глютаминовая кислота,3,17700
+516,g,г,GLY_G,Glycine,Глицин,3,17800
+517,g,г,PRO_G,Proline,Proline,3,17900
+518,g,г,SER_G,Serine,серин,3,18000
+521,g,г,HYP,Hydroxyproline,гидроксипролин,3,18100
+573,mg,мг,,"Vitamin E, added","Витамин Е, добавлено",2,7920
+578,пЅµg,нг,,"Vitamin B-12, added","Витамин В-12, добавлен",2,7340
+601,mg,мг,CHOLE,Cholesterol,холестерин,0,15700
+605,g,г,FATRN,"Fatty acids, total trans","Жирные кислоты, всего транс",3,15400
+606,g,г,FASAT,"Fatty acids, total saturated","Жирные кислоты, всего насыщенных",3,9700
+607,g,г,F4D0,4:00,4:00,3,9800
+608,g,г,F6D0,6:00,6:00,3,9900
+609,g,г,F8D0,8:00,8:00,3,10000
+610,g,г,F10D0,10:00,10:00,3,10100
+611,g,г,F12D0,12:00,12:00,3,10300
+612,g,г,F14D0,14:00,14:00,3,10500
+613,g,г,F16D0,16:00,16:00,3,10700
+614,g,г,F18D0,18:00,18:00,3,10900
+615,g,г,F20D0,20:00,20:00,3,11100
+617,g,г,F18D1,18:1 undifferentiated,18: 1 недифференцированный,3,12100
+618,g,г,F18D2,18:2 undifferentiated,18: 2 недифференцированный,3,13100
+619,g,г,F18D3,18:3 undifferentiated,18: 3 недифференцированный,3,13900
+620,g,г,F20D4,20:4 undifferentiated,20: 4 недифференцированный,3,14700
+621,g,г,F22D6,22:6 n-3 (DHA),22: 6 н-3 (ДГК),3,15300
+624,g,г,F22D0,22:00,22:00,3,11200
+625,g,г,F14D1,14:01,14:01,3,11500
+626,g,г,F16D1,16:1 undifferentiated,16: 1 недифференцированный,3,11700
+627,g,г,F18D4,18:04,18:04,3,14250
+628,g,г,F20D1,20:01,20:01,3,12400
+629,g,г,F20D5,20:5 n-3 (EPA),20: 5 н-3 (EPA),3,15000
+630,g,г,F22D1,22:1 undifferentiated,22: 1 недифференцированный,3,12500
+631,g,г,F22D5,22:5 n-3 (DPA),22: 5 н-3 (DPA),3,15200
+636,mg,мг,PHYSTR,Phytosterols,фитостеролы,0,15800
+638,mg,мг,STID7,Stigmasterol,стигмастерин,0,15900
+639,mg,мг,CAMD5,Campesterol,кампестерин,0,16000
+641,mg,мг,SITSTR,Beta-sitosterol,Бета-ситостерин,0,16200
+645,g,г,FAMS,"Fatty acids, total monounsaturated","Жирные кислоты, полностью мононенасыщенные",3,11400
+646,g,г,FAPU,"Fatty acids, total polyunsaturated","Жирные кислоты, полиненасыщенные",3,12900
+652,g,г,F15D0,15:00,15:00,3,10600
+653,g,г,F17D0,17:00,17:00,3,10800
+654,g,г,F24D0,24:00:00,24:00:00,3,11300
+662,g,г,F16D1T,16:1 t,16: 1 т,3,11900
+663,g,г,F18D1T,18:1 t,18: 1 т,3,12300
+664,g,г,F22D1T,22:1 t,22: 1 т,3,12700
+665,g,г,,18:2 t not further defined,18: 2 т не определено,3,13800
+666,g,г,,18:2 i,18:02,3,13700
+669,g,г,F18D2TT,"18:2 t,t","18: 2 т, т",3,13600
+670,g,г,F18D2CLA,18:2 CLAs,18: 2 CLA,3,13300
+671,g,г,F24D1C,24:1 c,24: 1 с,3,12800
+672,g,г,F20D2CN6,"20:2 n-6 c,c","20: 2 н-6 с, с",3,14300
+673,g,г,F16D1C,16:1 c,16: 1 с,3,11800
+674,g,г,F18D1C,18:1 c,18: 1 с,3,12200
+675,g,г,F18D2CN6,"18:2 n-6 c,c","18: 2 н-6 с, с",3,13200
+676,g,г,F22D1C,22:1 c,22: 1 с,3,12600
+685,g,г,F18D3CN6,"18:3 n-6 c,c,c","18: 3 н-6 с, с, с",3,14100
+687,g,г,F17D1,17:01,17:01,3,12000
+689,g,г,F20D3,20:3 undifferentiated,20: 3 недифференцированный,3,14400
+693,g,г,FATRNM,"Fatty acids, total trans-monoenoic","Жирные кислоты, общие транс-моноеновые",3,15500
+695,g,г,FATRNP,"Fatty acids, total trans-polyenoic","Жирные кислоты, общие транс-полиеновые",3,15600
+696,g,г,F13D0,13:00,13:00,3,10400
+697,g,г,F15D1,15:01,15:01,3,11600
+851,g,г,F18D3CN3,"18:3 n-3 c,c,c (ALA)","18: 3 н-3 с, с, с (ALA)",3,14000
+852,g,г,F20D3N3,20:3 n-3,20: 3 н-3,3,14500
+853,g,г,F20D3N6,20:3 n-6,20: 3 н-6,3,14600
+855,g,г,F20D4N6,20:4 n-6,20: 4 н-6,3,14900
+856,g,г,,18:3i,18: 3i,3,14200
+857,g,г,F21D5,21:05,21:05,3,15100
+858,g,г,F22D4,22:04,22:04,3,15160
+859,g,г,F18D1TN7,18:1-11 t (18:1t n-7),18: 1-11 т (18: 1 т н-7),3,12310

@@ -1,0 +1,18 @@
+﻿<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MaxWell.App">
+    <Application.Resources>
+        <ResourceDictionary>
+           <Color x:Key="backgroundColor1">#000000</Color>
+            <Color x:Key="textColor1">White</Color>
+
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textColor1}" />
+            </Style>
+            <Style x:Key="backgroundStyle" TargetType="VisualElement">
+                <Setter Property="BackgroundColor" Value="{DynamicResource backgroundColor1}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

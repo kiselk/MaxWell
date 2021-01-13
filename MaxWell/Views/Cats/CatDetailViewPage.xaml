@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   
+             xmlns:converters="clr-namespace:MaxWell.Converters"
+             x:Class="MaxWell.Views.Cats.CatDetailViewPage"
+             Title="{Binding Title}"
+             x:Name="TbVisits">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary" Text="Сохранить" Clicked="ButtonClicked" />
+        <ToolbarItem  Order="Primary" Text="Удалить" Clicked="DeleteClicked" />
+        <ToolbarItem  Order="Primary" Text="Фото" Clicked="AddPhoto_Clicked" />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateTimeToLocalDateConverter x:Key="DateConverter" />
+            <converters:AgeConverter x:Key="AgeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical" Spacing="20" Padding="15" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal">
+                <Image Grid.RowSpan="2" x:Name="selectedImage" Source="{Binding ImageAsImageStream, Mode=OneWay}"
+                       HorizontalOptions="Start" />
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="Имя:" FontSize="Small" />
+                        <Editor x:Name="name" Text="{Binding Text}" Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="16" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="Описание:" FontSize="Small" />
+                        <Editor Text="{Binding Description}" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Fill">
+                <Button x:Name="BreedButton" Text="Повязалась" Clicked="BreedClicked" />
+                <Button x:Name="PregnantButton" Text="Забеременела" Clicked="PregnantClicked" />
+                <Button x:Name="BirthButton" Text="Родила" Clicked="GaveBirthClicked" />
+
+
+            </StackLayout>
+            <Label Text="День Рождения" FontSize="Small" />
+            <DatePicker MinimumDate="01/01/2015"
+                        MaximumDate="12/31/2018"
+                        Date="{Binding BirthDate}" />
+
+            <Label x:Name="age" Text="Возраст" FontSize="Small" />
+            <Label Text="{Binding BirthDate, Converter={StaticResource AgeConverter},Mode=OneWay}" />
+
+
+            <Label Text="Пол" FontSize="Small" />
+            <Picker SelectedItem="{Binding Gender, Mode=TwoWay}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Мальчик</x:String>
+                        <x:String>Девочка</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <Label Text="Котенок" FontSize="Small" />
+            <Picker SelectedItem="{Binding isKitten, Mode=TwoWay}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Да</x:String>
+                        <x:String>Нет</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:MaxWell.Controls.Common"
+             x:Class="MaxWell.Views.Main.LoginPage">
+    <ContentPage.Content>
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="bg_16"   HorizontalOptions="Fill" Aspect="AspectFill"/>
+            <StackLayout   VerticalOptions="Fill" >
+
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200" />
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="LoginLabel" Text="Эээээээээ......"  Grid.Row="0" TextColor="White"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+                    <!--<Grid HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="1" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="1" />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout BackgroundColor="White" Grid.Row="0" Grid.ColumnSpan="3"></StackLayout>
+                    <StackLayout BackgroundColor="White" Grid.Row="1" Grid.Column="0"></StackLayout>
+                    <Button Grid.Row="1"  x:Name="LoginButton" HorizontalOptions="Center" Image="ic_vk4"  Text="Войти через " Clicked="OnLoginClicked" ContentLayout="Right,10" TextColor="White" BackgroundColor="Transparent"
+                            BorderColor="White"
+                            BorderWidth="1">
+                        <Button.BorderRadius>
+                            
+                            <OnPlatform x:TypeArguments="x:Int32">
+                                <OnPlatform.Android>4</OnPlatform.Android>
+                            </OnPlatform>
+                        </Button.BorderRadius>
+                    </Button> 
+-->
+                    <common:TransparentButton Grid.Row="1"  x:Name="LoginVkButton"
+                                              HorizontalOptions="Center" Image="ic_vk4"  Text="Войти через "
+                                              Clicked="OnLoginVkClicked" ContentLayout="Right,10"
+                                              />
+                    <common:TransparentButton Grid.Row="2"  x:Name="LoginFbButton"
+                                              HorizontalOptions="Center" Image="ic_fb"  Text="Войти через "
+                                              Clicked="OnLoginFbClicked" ContentLayout="Right,10"
+                    />
+                    <!--    <StackLayout BackgroundColor="White" Grid.Row="1" Grid.Column="2"></StackLayout>
+                    <StackLayout BackgroundColor="White" Grid.Row="2" Grid.ColumnSpan="3"></StackLayout>
+                </Grid>-->
+                    <!-- <Button x:Name="LoginButton"   HorizontalOptions="Center" Image="ic_vk"  Text="Войти через " Clicked="OnLoginClicked" ContentLayout="Right,10" TextColor="White" BackgroundColor="Transparent"></Button>
+                <Button x:Name="LoginButton2"   HorizontalOptions="Center" Image="ic_vk2"  Text="Войти через " Clicked="OnLoginClicked" ContentLayout="Right,10" TextColor="White" BackgroundColor="#49668D"></Button>
+-->
+                    <Label Grid.Row="3" IsVisible="false"  x:Name="FPLabel" Text="FP: "  TextColor="White"
+                   VerticalOptions="End" 
+                   HorizontalOptions="Center" />
+                </Grid>
+            </StackLayout>  </Grid>
+    </ContentPage.Content>
+</ContentPage>

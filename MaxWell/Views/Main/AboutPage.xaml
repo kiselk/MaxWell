@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:MaxWell.Controls.Common"
+             x:Class="MaxWell.Views.AboutPage"
+         
+             Title="{Binding Title}">
+    
+            <!--<ScrollView> -->
+            <StackLayout BackgroundColor="Transparent">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+            <Image Source="bg_12"  HorizontalOptions="Fill" Aspect="AspectFill"/>
+                    <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="Transparent" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                          <!--  <ContentView Padding="0,0,0,0" VerticalOptions="FillAndExpand">
+                                <Image Source="main.png" VerticalOptions="Center" HeightRequest="240" />
+                            </ContentView> -->
+
+                    <ScrollView Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="16,40,16,40" Spacing="10"  >
+                            <Image Source="Icon2" HeightRequest="128" WidthRequest="128"  HorizontalOptions="Center"  VerticalOptions="Start"/>
+                            <Label   HorizontalOptions="Center"  VerticalOptions="Start" FontSize="32">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                            <Span Text="Dr. MaxWell" FontAttributes="Bold" FontSize="32"  ForegroundColor="White" />
+
+
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                            <Label HorizontalOptions="Center" VerticalOptions="Start" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="Version 1.0" FontSize="10" ForegroundColor="White" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label HorizontalOptions="Center" VerticalOptions="Start">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="" />
+                                                    <Span Text=" " />
+                                            <Span Text="Web, iPhone, Android" FontSize="10"  ForegroundColor="White" />
+                                                    <Span Text=" " />
+                                                    <Span Text="." />
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                            <common:TransparentButton  HorizontalOptions="Center" Margin="0,10,0,0" Text="http://maxwell.vmobile.online/" Clicked="OpenWebCommand" FontSize="10"  />
+
+                            <Label HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="USDA Food Composition Databases" FontSize="10"  ForegroundColor="White" />
+                                                    <Span Text="." />
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                            <Span Text="United States Department of Agriculture" FontSize="10" ForegroundColor="White"/>
+                                                    <Span Text="." />
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                      <!--     <Label HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                            <Span Text="." />
+                                            <Span Text="Agricultural Research Servicee"  FontSize="10" ForegroundColor="White" />
+                                                    <Span Text="." />
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                            <common:TransparentButton Margin="0,10,0,0"  HorizontalOptions="Center"  VerticalOptions="Center" Text="https://ndb.nal.usda.gov/" Clicked="OpenWebCommandGov" FontSize="10"  />
+  -->                          <common:TransparentButton Margin="0,10,0,0" HorizontalOptions="Center" VerticalOptions="Center" Text="https://ars.usda.gov" Clicked="OpenWebCommandGov2" FontSize="10"  />
+
+                            <Label HorizontalOptions="Center" VerticalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="ВМобиле.Онлайн - vMobile.Online" FontSize="10" ForegroundColor="White" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center" VerticalOptions="End" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span Text="Copyright (c) 2019" FontSize="10" ForegroundColor="White" />
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <common:TransparentButton  HorizontalOptions="Center" VerticalOptions="End" Margin="0,10,0,0" Text="http://vmobile.online/" Clicked="OpenWebCommandVM" FontSize="10"  />
+
+
+
+
+
+</StackLayout>
+                            </ScrollView>
+                        </StackLayout>
+
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+       
+</ContentPage>

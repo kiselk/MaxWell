@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"         
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MaxWell.Views.Todo.TodoListPage" 
+             Title="Дела">
+	<ContentPage.ToolbarItems>
+        <ToolbarItem  Order="Primary" Text="+" Clicked="OnAddItemClicked">
+			<ToolbarItem.Icon>
+				<OnPlatform x:TypeArguments="FileImageSource">
+        <On Platform="Android, UWP" Value="plus.png" />
+    </OnPlatform>
+			</ToolbarItem.Icon>
+		</ToolbarItem>
+	</ContentPage.ToolbarItems>
+
+
+    
+        
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+        <Image Source="bg_8"   HorizontalOptions="Fill" Aspect="AspectFill"/>
+        <ListView x:Name="listView" VerticalOptions="FillAndExpand"
+                      BackgroundColor="Transparent" Margin="10" ItemSelected="OnItemSelected"
+                      RefreshCommand="{Binding RefreshCommand}"
+                      IsPullToRefreshEnabled="true"
+                      IsRefreshing="{Binding IsRefreshing}"
+                      CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="1" LineBreakMode="NoWrap" Text="{Binding Name}" FontSize="14" TextColor="White" VerticalTextAlignment="Center" />
+                                <Image Grid.Column="2" Source="check.png" IsVisible="{Binding Done}" />
+                            </Grid>
+
+                            <!--     <StackLayout Padding="20,0,0,0" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                <Label LineBreakMode="NoWrap" Text="{Binding Name}" VerticalTextAlignment="Center" />
+                                <Image Source="check.png" IsVisible="{Binding Done}" />
+                            </StackLayout>
+                       --> </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView></Grid>
+       
+   
+</ContentPage>

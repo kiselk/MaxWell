@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+        
+             x:Class="MaxWell.Views.Cats.NewCatPage"
+		     Title="Добавить">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Text="Сохранить" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="15" BackgroundColor="White">
+                <Label Text="Имя" FontSize="Medium" />
+                <Entry Text="{Binding Item.Text}" FontSize="Small" />
+                <Label Text="Описание" FontSize="Medium" />
+                <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
+                <Label Text="Пол" FontSize="Medium" />
+                <Picker Title="{Binding Item.Gender}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Мальчик</x:String>
+                            <x:String>Девочка</x:String>
+
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Label Text="Котенок" FontSize="Medium" />
+
+                <Picker Title="{Binding Item.isKitten}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Да</x:String>
+                            <x:String>Нет</x:String>
+
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
